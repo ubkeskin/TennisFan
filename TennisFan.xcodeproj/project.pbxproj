@@ -7,15 +7,37 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		630851282928D27C006042B6 /* CollectionViewCellInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630851272928D27B006042B6 /* CollectionViewCellInterface.swift */; };
+		6308512B292CDBAC006042B6 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6308512A292CDBAC006042B6 /* UIViewController.swift */; };
+		6308512E292D013A006042B6 /* ExpandableViewContentConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6308512D292D013A006042B6 /* ExpandableViewContentConfiguration.swift */; };
+		63085130292D014B006042B6 /* ExpandableContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6308512F292D014B006042B6 /* ExpandableContentView.swift */; };
+		6326A6D52924A72B00EAA05F /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6326A6D42924A72B00EAA05F /* RootViewController.swift */; };
+		6326A6D72924A74400EAA05F /* RootViewModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6326A6D62924A74400EAA05F /* RootViewModal.swift */; };
+		6326A6D92924A77400EAA05F /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6326A6D82924A77400EAA05F /* Router.swift */; };
+		6326A6DC2925111300EAA05F /* EventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6326A6DB2925111300EAA05F /* EventsViewController.swift */; };
+		6326A6F1292521DF00EAA05F /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6326A6F0292521DF00EAA05F /* APIManager.swift */; };
+		6326A6F3292522E500EAA05F /* EventsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6326A6F2292522E500EAA05F /* EventsViewModel.swift */; };
+		6326A6F62925383C00EAA05F /* CollectionViewHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6326A6F52925383C00EAA05F /* CollectionViewHeaderCell.swift */; };
+		6326A6F829253D7500EAA05F /* ExpandableCollactionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6326A6F729253D7500EAA05F /* ExpandableCollactionViewCell.swift */; };
+		634422D4292281DF0017A71C /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 634422D3292281DF0017A71C /* Alamofire */; };
+		634422D7292281F50017A71C /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 634422D6292281F50017A71C /* Kingfisher */; };
+		634422D9292283430017A71C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 634422D8292283430017A71C /* GoogleService-Info.plist */; };
+		634422ED2922BD2B0017A71C /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634422EC2922BD2B0017A71C /* LoginView.swift */; };
+		634422EF2922BD3F0017A71C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634422EE2922BD3F0017A71C /* LoginViewController.swift */; };
+		634422F12922BD4E0017A71C /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634422F02922BD4E0017A71C /* LoginViewModel.swift */; };
+		63B15EE1292582D80046A583 /* TennisLiveAPIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B15EE0292582D80046A583 /* TennisLiveAPIModel.swift */; };
 		63BBD60229227D8300EFF5CC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BBD60129227D8300EFF5CC /* AppDelegate.swift */; };
 		63BBD60429227D8300EFF5CC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BBD60329227D8300EFF5CC /* SceneDelegate.swift */; };
 		63BBD60629227D8300EFF5CC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BBD60529227D8300EFF5CC /* ViewController.swift */; };
-		63BBD60929227D8300EFF5CC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63BBD60729227D8300EFF5CC /* Main.storyboard */; };
 		63BBD60B29227D8400EFF5CC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63BBD60A29227D8400EFF5CC /* Assets.xcassets */; };
 		63BBD60E29227D8400EFF5CC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63BBD60C29227D8400EFF5CC /* LaunchScreen.storyboard */; };
 		63BBD61929227D8400EFF5CC /* TennisFanTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BBD61829227D8400EFF5CC /* TennisFanTests.swift */; };
 		63BBD62329227D8400EFF5CC /* TennisFanUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BBD62229227D8400EFF5CC /* TennisFanUITests.swift */; };
 		63BBD62529227D8400EFF5CC /* TennisFanUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BBD62429227D8400EFF5CC /* TennisFanUITestsLaunchTests.swift */; };
+		63BBD63229227E9800EFF5CC /* TabbarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BBD63129227E9800EFF5CC /* TabbarViewController.swift */; };
+		B3769A312CEDC7633C0BAFBD /* Pods_TennisFan_TennisFanUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D764E8ADC2535100D6EF8B9 /* Pods_TennisFan_TennisFanUITests.framework */; };
+		B7FA2BD20FB83495A14C9A00 /* Pods_TennisFanTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF72DE0A6DE247DF7BC3ACB4 /* Pods_TennisFanTests.framework */; };
+		F7BC541DEFCE556739902C6B /* Pods_TennisFan.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24203A7EE6A288A790606233 /* Pods_TennisFan.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,11 +58,31 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		24203A7EE6A288A790606233 /* Pods_TennisFan.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TennisFan.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3D764E8ADC2535100D6EF8B9 /* Pods_TennisFan_TennisFanUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TennisFan_TennisFanUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4934D6BF6A188AB7697006A9 /* Pods-TennisFan.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TennisFan.release.xcconfig"; path = "Target Support Files/Pods-TennisFan/Pods-TennisFan.release.xcconfig"; sourceTree = "<group>"; };
+		5ADDEF621E51DDCBCBA8A03C /* Pods-TennisFan.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TennisFan.debug.xcconfig"; path = "Target Support Files/Pods-TennisFan/Pods-TennisFan.debug.xcconfig"; sourceTree = "<group>"; };
+		630851272928D27B006042B6 /* CollectionViewCellInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCellInterface.swift; sourceTree = "<group>"; };
+		6308512A292CDBAC006042B6 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
+		6308512D292D013A006042B6 /* ExpandableViewContentConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandableViewContentConfiguration.swift; sourceTree = "<group>"; };
+		6308512F292D014B006042B6 /* ExpandableContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandableContentView.swift; sourceTree = "<group>"; };
+		6326A6D42924A72B00EAA05F /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
+		6326A6D62924A74400EAA05F /* RootViewModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewModal.swift; sourceTree = "<group>"; };
+		6326A6D82924A77400EAA05F /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		6326A6DB2925111300EAA05F /* EventsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsViewController.swift; sourceTree = "<group>"; };
+		6326A6F0292521DF00EAA05F /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		6326A6F2292522E500EAA05F /* EventsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsViewModel.swift; sourceTree = "<group>"; };
+		6326A6F52925383C00EAA05F /* CollectionViewHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewHeaderCell.swift; sourceTree = "<group>"; };
+		6326A6F729253D7500EAA05F /* ExpandableCollactionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandableCollactionViewCell.swift; sourceTree = "<group>"; };
+		634422D8292283430017A71C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "TennisFan/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		634422EC2922BD2B0017A71C /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		634422EE2922BD3F0017A71C /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		634422F02922BD4E0017A71C /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		63B15EE0292582D80046A583 /* TennisLiveAPIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TennisLiveAPIModel.swift; sourceTree = "<group>"; };
 		63BBD5FE29227D8300EFF5CC /* TennisFan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TennisFan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		63BBD60129227D8300EFF5CC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		63BBD60329227D8300EFF5CC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		63BBD60529227D8300EFF5CC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		63BBD60829227D8300EFF5CC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		63BBD60A29227D8400EFF5CC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		63BBD60D29227D8400EFF5CC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		63BBD60F29227D8400EFF5CC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -49,6 +91,12 @@
 		63BBD61E29227D8400EFF5CC /* TennisFanUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TennisFanUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		63BBD62229227D8400EFF5CC /* TennisFanUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TennisFanUITests.swift; sourceTree = "<group>"; };
 		63BBD62429227D8400EFF5CC /* TennisFanUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TennisFanUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		63BBD63129227E9800EFF5CC /* TabbarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarViewController.swift; sourceTree = "<group>"; };
+		66DF2C2ED43AE5A759566E43 /* Pods-TennisFanTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TennisFanTests.release.xcconfig"; path = "Target Support Files/Pods-TennisFanTests/Pods-TennisFanTests.release.xcconfig"; sourceTree = "<group>"; };
+		73D488D9FEA1058CAA4C43E4 /* Pods-TennisFanTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TennisFanTests.debug.xcconfig"; path = "Target Support Files/Pods-TennisFanTests/Pods-TennisFanTests.debug.xcconfig"; sourceTree = "<group>"; };
+		B1FA48419B39B7974A91783A /* Pods-TennisFan-TennisFanUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TennisFan-TennisFanUITests.debug.xcconfig"; path = "Target Support Files/Pods-TennisFan-TennisFanUITests/Pods-TennisFan-TennisFanUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		BBA63D57830AED9C251DEB51 /* Pods-TennisFan-TennisFanUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TennisFan-TennisFanUITests.release.xcconfig"; path = "Target Support Files/Pods-TennisFan-TennisFanUITests/Pods-TennisFan-TennisFanUITests.release.xcconfig"; sourceTree = "<group>"; };
+		FF72DE0A6DE247DF7BC3ACB4 /* Pods_TennisFanTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TennisFanTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +104,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				634422D7292281F50017A71C /* Kingfisher in Frameworks */,
+				634422D4292281DF0017A71C /* Alamofire in Frameworks */,
+				F7BC541DEFCE556739902C6B /* Pods_TennisFan.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +114,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B7FA2BD20FB83495A14C9A00 /* Pods_TennisFanTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,19 +122,130 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B3769A312CEDC7633C0BAFBD /* Pods_TennisFan_TennisFanUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		203DD0C9A0EB146EA6C5F4FD /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5ADDEF621E51DDCBCBA8A03C /* Pods-TennisFan.debug.xcconfig */,
+				4934D6BF6A188AB7697006A9 /* Pods-TennisFan.release.xcconfig */,
+				B1FA48419B39B7974A91783A /* Pods-TennisFan-TennisFanUITests.debug.xcconfig */,
+				BBA63D57830AED9C251DEB51 /* Pods-TennisFan-TennisFanUITests.release.xcconfig */,
+				73D488D9FEA1058CAA4C43E4 /* Pods-TennisFanTests.debug.xcconfig */,
+				66DF2C2ED43AE5A759566E43 /* Pods-TennisFanTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		63085129292CDB97006042B6 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				6308512A292CDBAC006042B6 /* UIViewController.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		6308512C292D0111006042B6 /* ExpandableCell */ = {
+			isa = PBXGroup;
+			children = (
+				6326A6F729253D7500EAA05F /* ExpandableCollactionViewCell.swift */,
+				6308512D292D013A006042B6 /* ExpandableViewContentConfiguration.swift */,
+				6308512F292D014B006042B6 /* ExpandableContentView.swift */,
+			);
+			path = ExpandableCell;
+			sourceTree = "<group>";
+		};
+		6326A6D32924A57E00EAA05F /* RootView */ = {
+			isa = PBXGroup;
+			children = (
+				6326A6D42924A72B00EAA05F /* RootViewController.swift */,
+				6326A6D62924A74400EAA05F /* RootViewModal.swift */,
+			);
+			path = RootView;
+			sourceTree = "<group>";
+		};
+		6326A6DA292510F200EAA05F /* UserScreens */ = {
+			isa = PBXGroup;
+			children = (
+				63BBD60529227D8300EFF5CC /* ViewController.swift */,
+				63BBD63129227E9800EFF5CC /* TabbarViewController.swift */,
+				6326A6DD2925111B00EAA05F /* EventsScreen */,
+			);
+			path = UserScreens;
+			sourceTree = "<group>";
+		};
+		6326A6DD2925111B00EAA05F /* EventsScreen */ = {
+			isa = PBXGroup;
+			children = (
+				6326A6F42925382C00EAA05F /* CollectionViews */,
+				6326A6E32925193C00EAA05F /* EventsModels */,
+				6326A6DB2925111300EAA05F /* EventsViewController.swift */,
+				6326A6F2292522E500EAA05F /* EventsViewModel.swift */,
+			);
+			path = EventsScreen;
+			sourceTree = "<group>";
+		};
+		6326A6DE2925112F00EAA05F /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				63BBD60129227D8300EFF5CC /* AppDelegate.swift */,
+				63BBD60329227D8300EFF5CC /* SceneDelegate.swift */,
+			);
+			path = Delegates;
+			sourceTree = "<group>";
+		};
+		6326A6E32925193C00EAA05F /* EventsModels */ = {
+			isa = PBXGroup;
+			children = (
+				63B15EE0292582D80046A583 /* TennisLiveAPIModel.swift */,
+			);
+			path = EventsModels;
+			sourceTree = "<group>";
+		};
+		6326A6F42925382C00EAA05F /* CollectionViews */ = {
+			isa = PBXGroup;
+			children = (
+				6326A6F52925383C00EAA05F /* CollectionViewHeaderCell.swift */,
+				6308512C292D0111006042B6 /* ExpandableCell */,
+				630851272928D27B006042B6 /* CollectionViewCellInterface.swift */,
+			);
+			path = CollectionViews;
+			sourceTree = "<group>";
+		};
+		634422D1292281770017A71C /* NetworkManager */ = {
+			isa = PBXGroup;
+			children = (
+				6326A6D82924A77400EAA05F /* Router.swift */,
+				6326A6F0292521DF00EAA05F /* APIManager.swift */,
+			);
+			path = NetworkManager;
+			sourceTree = "<group>";
+		};
+		634422EB2922BADE0017A71C /* SigningScreen */ = {
+			isa = PBXGroup;
+			children = (
+				634422EC2922BD2B0017A71C /* LoginView.swift */,
+				634422EE2922BD3F0017A71C /* LoginViewController.swift */,
+				634422F02922BD4E0017A71C /* LoginViewModel.swift */,
+			);
+			path = SigningScreen;
+			sourceTree = "<group>";
+		};
 		63BBD5F529227D8300EFF5CC = {
 			isa = PBXGroup;
 			children = (
+				634422D8292283430017A71C /* GoogleService-Info.plist */,
 				63BBD60029227D8300EFF5CC /* TennisFan */,
 				63BBD61729227D8400EFF5CC /* TennisFanTests */,
 				63BBD62129227D8400EFF5CC /* TennisFanUITests */,
 				63BBD5FF29227D8300EFF5CC /* Products */,
+				203DD0C9A0EB146EA6C5F4FD /* Pods */,
+				DD7F9B00A7F4A396291D01F1 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -99,10 +262,12 @@
 		63BBD60029227D8300EFF5CC /* TennisFan */ = {
 			isa = PBXGroup;
 			children = (
-				63BBD60129227D8300EFF5CC /* AppDelegate.swift */,
-				63BBD60329227D8300EFF5CC /* SceneDelegate.swift */,
-				63BBD60529227D8300EFF5CC /* ViewController.swift */,
-				63BBD60729227D8300EFF5CC /* Main.storyboard */,
+				63085129292CDB97006042B6 /* Extensions */,
+				6326A6DE2925112F00EAA05F /* Delegates */,
+				6326A6D32924A57E00EAA05F /* RootView */,
+				634422EB2922BADE0017A71C /* SigningScreen */,
+				6326A6DA292510F200EAA05F /* UserScreens */,
+				634422D1292281770017A71C /* NetworkManager */,
 				63BBD60A29227D8400EFF5CC /* Assets.xcassets */,
 				63BBD60C29227D8400EFF5CC /* LaunchScreen.storyboard */,
 				63BBD60F29227D8400EFF5CC /* Info.plist */,
@@ -127,6 +292,16 @@
 			path = TennisFanUITests;
 			sourceTree = "<group>";
 		};
+		DD7F9B00A7F4A396291D01F1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				24203A7EE6A288A790606233 /* Pods_TennisFan.framework */,
+				3D764E8ADC2535100D6EF8B9 /* Pods_TennisFan_TennisFanUITests.framework */,
+				FF72DE0A6DE247DF7BC3ACB4 /* Pods_TennisFanTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -134,15 +309,21 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 63BBD62829227D8400EFF5CC /* Build configuration list for PBXNativeTarget "TennisFan" */;
 			buildPhases = (
+				DBFF5F24EB99ED35FF1899AB /* [CP] Check Pods Manifest.lock */,
 				63BBD5FA29227D8300EFF5CC /* Sources */,
 				63BBD5FB29227D8300EFF5CC /* Frameworks */,
 				63BBD5FC29227D8300EFF5CC /* Resources */,
+				412A31152CA4C0345A312514 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = TennisFan;
+			packageProductDependencies = (
+				634422D3292281DF0017A71C /* Alamofire */,
+				634422D6292281F50017A71C /* Kingfisher */,
+			);
 			productName = TennisFan;
 			productReference = 63BBD5FE29227D8300EFF5CC /* TennisFan.app */;
 			productType = "com.apple.product-type.application";
@@ -151,6 +332,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 63BBD62B29227D8400EFF5CC /* Build configuration list for PBXNativeTarget "TennisFanTests" */;
 			buildPhases = (
+				EAC18CF13359FE1939CC5F7B /* [CP] Check Pods Manifest.lock */,
 				63BBD61029227D8400EFF5CC /* Sources */,
 				63BBD61129227D8400EFF5CC /* Frameworks */,
 				63BBD61229227D8400EFF5CC /* Resources */,
@@ -169,9 +351,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 63BBD62E29227D8400EFF5CC /* Build configuration list for PBXNativeTarget "TennisFanUITests" */;
 			buildPhases = (
+				3236DB4F8F04FD384CBA55B0 /* [CP] Check Pods Manifest.lock */,
 				63BBD61A29227D8400EFF5CC /* Sources */,
 				63BBD61B29227D8400EFF5CC /* Frameworks */,
 				63BBD61C29227D8400EFF5CC /* Resources */,
+				B8EE7D4A8C8A378FCB9F7858 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -215,6 +399,10 @@
 				Base,
 			);
 			mainGroup = 63BBD5F529227D8300EFF5CC;
+			packageReferences = (
+				634422D2292281DF0017A71C /* XCRemoteSwiftPackageReference "Alamofire" */,
+				634422D5292281F50017A71C /* XCRemoteSwiftPackageReference "Kingfisher" */,
+			);
 			productRefGroup = 63BBD5FF29227D8300EFF5CC /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -233,7 +421,7 @@
 			files = (
 				63BBD60E29227D8400EFF5CC /* LaunchScreen.storyboard in Resources */,
 				63BBD60B29227D8400EFF5CC /* Assets.xcassets in Resources */,
-				63BBD60929227D8300EFF5CC /* Main.storyboard in Resources */,
+				634422D9292283430017A71C /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -253,14 +441,134 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		3236DB4F8F04FD384CBA55B0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TennisFan-TennisFanUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		412A31152CA4C0345A312514 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TennisFan/Pods-TennisFan-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TennisFan/Pods-TennisFan-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TennisFan/Pods-TennisFan-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B8EE7D4A8C8A378FCB9F7858 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TennisFan-TennisFanUITests/Pods-TennisFan-TennisFanUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TennisFan-TennisFanUITests/Pods-TennisFan-TennisFanUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TennisFan-TennisFanUITests/Pods-TennisFan-TennisFanUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DBFF5F24EB99ED35FF1899AB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TennisFan-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EAC18CF13359FE1939CC5F7B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TennisFanTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		63BBD5FA29227D8300EFF5CC /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6326A6DC2925111300EAA05F /* EventsViewController.swift in Sources */,
+				6326A6F1292521DF00EAA05F /* APIManager.swift in Sources */,
+				6308512B292CDBAC006042B6 /* UIViewController.swift in Sources */,
+				63B15EE1292582D80046A583 /* TennisLiveAPIModel.swift in Sources */,
+				63085130292D014B006042B6 /* ExpandableContentView.swift in Sources */,
+				634422EF2922BD3F0017A71C /* LoginViewController.swift in Sources */,
 				63BBD60629227D8300EFF5CC /* ViewController.swift in Sources */,
+				63BBD63229227E9800EFF5CC /* TabbarViewController.swift in Sources */,
 				63BBD60229227D8300EFF5CC /* AppDelegate.swift in Sources */,
+				6326A6F3292522E500EAA05F /* EventsViewModel.swift in Sources */,
+				6308512E292D013A006042B6 /* ExpandableViewContentConfiguration.swift in Sources */,
+				6326A6F62925383C00EAA05F /* CollectionViewHeaderCell.swift in Sources */,
+				630851282928D27C006042B6 /* CollectionViewCellInterface.swift in Sources */,
+				634422ED2922BD2B0017A71C /* LoginView.swift in Sources */,
+				6326A6D92924A77400EAA05F /* Router.swift in Sources */,
 				63BBD60429227D8300EFF5CC /* SceneDelegate.swift in Sources */,
+				6326A6F829253D7500EAA05F /* ExpandableCollactionViewCell.swift in Sources */,
+				6326A6D52924A72B00EAA05F /* RootViewController.swift in Sources */,
+				634422F12922BD4E0017A71C /* LoginViewModel.swift in Sources */,
+				6326A6D72924A74400EAA05F /* RootViewModal.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,14 +605,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		63BBD60729227D8300EFF5CC /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				63BBD60829227D8300EFF5CC /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		63BBD60C29227D8400EFF5CC /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -432,6 +732,7 @@
 		};
 		63BBD62929227D8400EFF5CC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5ADDEF621E51DDCBCBA8A03C /* Pods-TennisFan.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -441,10 +742,9 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TennisFan/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -460,6 +760,7 @@
 		};
 		63BBD62A29227D8400EFF5CC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4934D6BF6A188AB7697006A9 /* Pods-TennisFan.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -469,10 +770,9 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TennisFan/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -488,6 +788,7 @@
 		};
 		63BBD62C29227D8400EFF5CC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 73D488D9FEA1058CAA4C43E4 /* Pods-TennisFanTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -508,6 +809,7 @@
 		};
 		63BBD62D29227D8400EFF5CC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 66DF2C2ED43AE5A759566E43 /* Pods-TennisFanTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -528,6 +830,7 @@
 		};
 		63BBD62F29227D8400EFF5CC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B1FA48419B39B7974A91783A /* Pods-TennisFan-TennisFanUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -546,6 +849,7 @@
 		};
 		63BBD63029227D8400EFF5CC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BBA63D57830AED9C251DEB51 /* Pods-TennisFan-TennisFanUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -602,6 +906,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		634422D2292281DF0017A71C /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+		634422D5292281F50017A71C /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		634422D3292281DF0017A71C /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 634422D2292281DF0017A71C /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		634422D6292281F50017A71C /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 634422D5292281F50017A71C /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 63BBD5F629227D8300EFF5CC /* Project object */;
 }
