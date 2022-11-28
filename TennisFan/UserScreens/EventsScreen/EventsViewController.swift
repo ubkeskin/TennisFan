@@ -20,7 +20,7 @@ extension EventsViewController: EventsViewInterface {
 class EventsViewController: UIViewController {
   // MARK: -Enums
   enum ItemDataType: Hashable {
-    case header([Event]), expandable(Event)
+    case header(Event), expandable(Event)
   }
   enum SectionType {
     case main
@@ -67,15 +67,14 @@ class EventsViewController: UIViewController {
     }
     
     dataSource = collectionDataSource(collectionView: collectionView, cellProvider: { [self] collectionView, indexPath, itemIdentifier in
-      guard let results = viewModel?.matches else {fatalError()}
       
       switch itemIdentifier {
-        case .expandable(_):
-          let collectionViewCell = collectionView.dequeueConfiguredReusableCell(using: expandableCellRegistration, for: indexPath, item: results[indexPath.item - 1])
-          return collectionViewCell
-          
-        case .header(_):
-          let collectionViewCell = collectionView.dequeueConfiguredReusableCell(using: headerCellRegistration, for: indexPath, item: results[indexPath.item] )
+        case .expandable(let expandable):
+            let collectionViewCell = collectionView.dequeueConfiguredReusableCell(using: expandableCellRegistration, for: indexPath, item: expandable)
+            return collectionViewCell
+
+        case .header(let header):
+          let collectionViewCell = collectionView.dequeueConfiguredReusableCell(using: headerCellRegistration, for: indexPath, item: header)
           return collectionViewCell
       }
     })
@@ -87,7 +86,7 @@ class EventsViewController: UIViewController {
     var dataSourceSnapshot = dataSource?.snapshot()
     dataSourceSnapshot?.appendSections([.main])
     viewModel?.matches.forEach { result in
-      let headerForCell = ItemDataType.header([result])
+      let headerForCell = ItemDataType.header(result)
       sectionSnapshot.append([headerForCell])
       let expandable = ItemDataType.expandable(result)
       sectionSnapshot.append([expandable], to: headerForCell)

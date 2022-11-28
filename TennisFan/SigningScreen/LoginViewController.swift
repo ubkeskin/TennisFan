@@ -39,8 +39,10 @@ class LoginViewController: UIViewController {
     ])
   }
   
-    @objc func signInAction() {
-    viewModel.login(with: loginView.eMailTextField.text ?? "", password: loginView.passwordTextField.text ?? "", controller: self)
+  @objc func signInAction() {
+    viewModel.login(with: loginView.eMailTextField.text ?? "",
+                    password: loginView.passwordTextField.text ?? "",
+                    controller: self)
   }
   @objc func signUpAction() {
     viewModel.createUser(with: loginView.eMailTextField.text ?? "", password: loginView.passwordTextField.text ?? "", controller: self)

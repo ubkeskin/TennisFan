@@ -9,6 +9,7 @@ import Foundation
 import UIKit
 
 struct ExpandableContentConfiguration: UIContentConfiguration, Hashable {
+  var eventDate: String?
   var homeImage: UIImage?
   var awayImage: UIImage?
   var homeName: String?
@@ -25,7 +26,7 @@ struct ExpandableContentConfiguration: UIContentConfiguration, Hashable {
     }
     var updatedConfiguration = self
     if state.isSelected {
-      
+      // configure selected state logic
     }
     return updatedConfiguration
   }

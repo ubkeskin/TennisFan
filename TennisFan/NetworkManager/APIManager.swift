@@ -16,16 +16,26 @@ class APIManager {
         AF.request(router).response(completionHandler:  { response in
           let decoder = JSONDecoder()
           switch response.result {
-          case .success(let events):
+            case .success(let events):
               let res = try! decoder.decode(TennisAPIModel.self, from: events!)
               guard let results = res.events else { return }
               
-            completion(results)
-          case .failure(let error):
-            print(NSError(domain: error.localizedDescription, code: 0))
+              completion(results)
+            case .failure(let error):
+              print(NSError(domain: error.localizedDescription, code: 0))
+          }
+        })
+      case .playerDetail:
+        AF.request(router).responseDecodable(of: TennisAPIModel.self) { response in
+          switch response.result {
+            case .success(let events):
+              guard let results = events.events else { return }
+              completion(results)
+            case .failure(let error):
+              print(NSError(domain: error.localizedDescription, code: 0))
+          }
         }
-      })
-      case .players:
+      case .playerImage:
         AF.request(router).responseDecodable(of: TennisAPIModel.self) { response in
           switch response.result {
             case .success(let events):
@@ -56,6 +66,5 @@ class APIManager {
           }
         }
     }
-    
   }
 }
