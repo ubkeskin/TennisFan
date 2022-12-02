@@ -121,7 +121,6 @@ class ExpandableContentView: UIView, UIContentView {
     fatalError("init(coder:) has not been implemented")
   }
   override func layoutSubviews() {
-    apply(configuration: currentConfiguration)
     setupViews()
   }
   private func setupViews() {

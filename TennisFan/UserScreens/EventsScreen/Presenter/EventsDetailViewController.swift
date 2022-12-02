@@ -21,7 +21,7 @@ class EventsDetailViewController: UIViewController {
   lazy var viewModel: EventsDetailViewModel = EventsDetailViewModel(view: self)
   
   override func viewDidLoad() {
-    viewModel.viewDidLoad()
+    configureDetailView()
     setupUI()
   }
   private func setupUI() {
