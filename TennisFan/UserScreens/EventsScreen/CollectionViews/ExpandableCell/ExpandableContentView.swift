@@ -64,7 +64,21 @@ class ExpandableContentView: UIView, UIContentView {
     eventDate.text = currentConfiguration.eventDate
     return eventDate
   }()
-  lazy var stackView: UIStackView = {
+  lazy var eventHour: UILabel = {
+    let eventHour = UILabel()
+    eventHour.numberOfLines = 0
+    eventHour.text = currentConfiguration.eventHour
+    return eventHour
+  }()
+  lazy var targetSign: UIImageView = {
+    let targetSign = UIImageView()
+    
+    targetSign.image = UIImage(systemName: "circle.circle")
+    targetSign.tintColor = .orange
+    
+    return targetSign
+  }()
+  lazy var eventStack: UIStackView = {
     let homeLabelStack = UIStackView(arrangedSubviews: [homeName, homeRanking])
     homeLabelStack.axis = .vertical
     homeLabelStack.alignment = .center
@@ -86,38 +100,45 @@ class ExpandableContentView: UIView, UIContentView {
     eventStack.spacing = 10
     eventStack.alignment = .fill
     eventStack.distribution = .fillEqually
-//    let stackView = UIStackView(arrangedSubviews: [eventDate, eventStack])
-//    stackView.axis = .vertical
-//    stackView.spacing = 5
-//    stackView.alignment = .fill
-//    stackView.distribution = .fill
     return eventStack
+  }()
+  lazy var dateStack: UIStackView = {
+    let dateStack = UIStackView(arrangedSubviews: [eventDate, targetSign, eventHour])
+    dateStack.axis = .horizontal
+    dateStack.spacing = 5
+    dateStack.alignment = .center
+    dateStack.distribution = .fill
+    return dateStack
   }()
   
   init(configuration: ExpandableContentConfiguration) {
     super.init(frame: .zero)
     currentConfiguration = configuration
-    setupViews()
     apply(configuration: configuration)
   }
   
   required init?(coder: NSCoder) {
     fatalError("init(coder:) has not been implemented")
   }
+  override func layoutSubviews() {
+    apply(configuration: currentConfiguration)
+    setupViews()
+  }
   private func setupViews() {
-    addSubview(stackView)
-    addSubview(eventDate)
-    eventDate.translatesAutoresizingMaskIntoConstraints = false
-    stackView.translatesAutoresizingMaskIntoConstraints = false
+    addSubview(eventStack)
+    addSubview(dateStack)
+    eventStack.translatesAutoresizingMaskIntoConstraints = false
+    dateStack.translatesAutoresizingMaskIntoConstraints = false
     NSLayoutConstraint.activate([
-      eventDate.topAnchor.constraint(equalTo: layoutMarginsGuide.topAnchor),
-      eventDate.bottomAnchor.constraint(equalTo: layoutMarginsGuide.topAnchor, constant: 40),
-      eventDate.centerXAnchor.constraint(equalTo: layoutMarginsGuide.centerXAnchor),
-      stackView.topAnchor.constraint(equalTo: eventDate.bottomAnchor, constant: 5),
-      stackView.bottomAnchor.constraint(equalTo: layoutMarginsGuide.bottomAnchor),
-      stackView.leftAnchor.constraint(equalTo: layoutMarginsGuide.leftAnchor),
-      stackView.rightAnchor.constraint(equalTo: layoutMarginsGuide.rightAnchor),
+      dateStack.topAnchor.constraint(equalTo: layoutMarginsGuide.topAnchor),
+      dateStack.bottomAnchor.constraint(equalTo: layoutMarginsGuide.topAnchor, constant: 40),
+      dateStack.centerXAnchor.constraint(equalTo: layoutMarginsGuide.centerXAnchor),
+      eventStack.topAnchor.constraint(equalTo: layoutMarginsGuide.topAnchor, constant: 50),
+      eventStack.bottomAnchor.constraint(equalTo: layoutMarginsGuide.bottomAnchor, constant: -5),
+      eventStack.leftAnchor.constraint(equalTo: layoutMarginsGuide.leftAnchor),
+      eventStack.rightAnchor.constraint(equalTo: layoutMarginsGuide.rightAnchor)
     ])
+    invalidateIntrinsicContentSize()
   }
   private func apply(configuration: ExpandableContentConfiguration) {
     guard currentConfiguration != configuration else {return}
@@ -129,6 +150,5 @@ class ExpandableContentView: UIView, UIContentView {
     awayName.text = configuration.awayName
     awayRanking.text = configuration.awayRanking
     awayImage.image = configuration.awayImage
-    
   }
 }

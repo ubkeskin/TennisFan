@@ -35,6 +35,7 @@ class EventsViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     setupUI()
+    collectionView.delegate = self
   }
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
@@ -63,16 +64,17 @@ class EventsViewController: UIViewController {
     }
     
     let expandableCellRegistration = UICollectionView.CellRegistration<ExpandableCollactionViewCell, Event> {cell,indexPath,itemIdentifier in
+      
       cell.event = itemIdentifier
     }
     
-    dataSource = collectionDataSource(collectionView: collectionView, cellProvider: { [self] collectionView, indexPath, itemIdentifier in
+    dataSource = collectionDataSource(collectionView: collectionView, cellProvider: { collectionView, indexPath, itemIdentifier in
       
       switch itemIdentifier {
         case .expandable(let expandable):
-            let collectionViewCell = collectionView.dequeueConfiguredReusableCell(using: expandableCellRegistration, for: indexPath, item: expandable)
-            return collectionViewCell
-
+          let collectionViewCell = collectionView.dequeueConfiguredReusableCell(using: expandableCellRegistration, for: indexPath, item: expandable)
+          return collectionViewCell
+          
         case .header(let header):
           let collectionViewCell = collectionView.dequeueConfiguredReusableCell(using: headerCellRegistration, for: indexPath, item: header)
           return collectionViewCell
@@ -95,5 +97,21 @@ class EventsViewController: UIViewController {
     dataSource?.apply(sectionSnapshot, to: .main)
   }
 }
-
+extension EventsViewController: UICollectionViewDelegate {
+  func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    print(indexPath)
+    guard let selectedCell = collectionView.cellForItem(at: indexPath) as? ExpandableCollactionViewCell,
+          let selectedEvent = selectedCell.event
+    else { return }
+    let imageDictionary = ["homeImage" : selectedCell.homeImage?.image?.pngData(),
+                           "awayImage" : selectedCell.awayImage?.image?.pngData()]
+    let rankingDictionary = ["homeRanking" : selectedCell.homeRanking,
+                             "awayRanking" : selectedCell.awayRanking]
+    let eventsDetailViewController = EventsDetailViewController()
+    eventsDetailViewController.viewModel.event = selectedEvent
+    eventsDetailViewController.viewModel.imageDictionary = imageDictionary
+    eventsDetailViewController.viewModel.rankingsDictionary = rankingDictionary
+    present(eventsDetailViewController, animated: true)
+  }
+}
 
