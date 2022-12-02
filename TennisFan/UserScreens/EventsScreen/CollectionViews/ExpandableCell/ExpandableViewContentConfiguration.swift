@@ -8,8 +8,10 @@
 import Foundation
 import UIKit
 
-struct ExpandableContentConfiguration: UIContentConfiguration, Hashable {
+struct ExpandableContentConfiguration: UIContentConfiguration, Equatable {
+ 
   var eventDate: String?
+  var eventHour: String?
   var homeImage: UIImage?
   var awayImage: UIImage?
   var homeName: String?
@@ -20,14 +22,14 @@ struct ExpandableContentConfiguration: UIContentConfiguration, Hashable {
     return ExpandableContentView(configuration: self)
   }
   
-  func updated(for state: UIConfigurationState) -> ExpandableContentConfiguration {
+  func updated(for state: UIConfigurationState) -> Self {
     guard let state = state as? UICellConfigurationState else {
       return self
     }
     var updatedConfiguration = self
-    if state.isSelected {
-      // configure selected state logic
-    }
+//    if state.isExpanded {
+//      // configure selected state logic
+//    }
     return updatedConfiguration
   }
 }

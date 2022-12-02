@@ -63,10 +63,11 @@ class EventsViewController: UIViewController {
     }
     
     let expandableCellRegistration = UICollectionView.CellRegistration<ExpandableCollactionViewCell, Event> {cell,indexPath,itemIdentifier in
+      
       cell.event = itemIdentifier
     }
     
-    dataSource = collectionDataSource(collectionView: collectionView, cellProvider: { [self] collectionView, indexPath, itemIdentifier in
+    dataSource = collectionDataSource(collectionView: collectionView, cellProvider: { collectionView, indexPath, itemIdentifier in
       
       switch itemIdentifier {
         case .expandable(let expandable):

@@ -15,7 +15,7 @@ extension EventsViewModel: EventsViewModelInterface {
     getResults()
   }
   func getResults() {
-    APIManager.shared.fetchData(router: Router.events(date: date), completion: {[self] results in
+    APIManager.shared.fetchEventData(router: Router.events(date: date), completion: {[self] results in
       matches = results.prefix(through: 20).compactMap({ event in
         event
       })
@@ -25,17 +25,14 @@ extension EventsViewModel: EventsViewModelInterface {
 }
 class EventsViewModel {
   weak var view: EventsViewInterface?
-  lazy var dateFormatter: DateFormatter = {
-    var dateFormatter = DateFormatter()
-    dateFormatter.dateFormat = "dd/MM/yyyy'T'HH:mm:ssZZZZZ"
-    return dateFormatter
-  }()
+  var dateFormatter: DateFormatter
   lazy var date: String = {
     String(dateFormatter.string(from: Date()).prefix(10))
   }()
   var matches: [Event] = [Event(awayScore: nil, awayTeam: nil, changes: nil, customID: nil, finalResultOnly: nil, firstToServe: nil, hasGlobalHighlights: nil, homeScore: nil, homeTeam: nil, id: nil, lastPeriod: nil, periods: nil, roundInfo: nil, slug: nil, startTimestamp: nil, status: nil, time: nil, tournament: nil, winnerCode: nil)] 
   init(view: EventsViewInterface? = nil) {
     self.view = view
+    dateFormatter = CustomDateFormatter(useCase: .request)
     getResults()
   }
 }

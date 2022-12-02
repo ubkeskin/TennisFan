@@ -150,6 +150,7 @@ enum Period1: String, Codable, Hashable{
   case the3RDSet = "3rd set"
   case walkover = "Walkover"
   case suspended = "Suspended"
+  case startDelayed = "Start delayed"
 }
 
 enum Period4: String, Codable, Hashable {
@@ -201,6 +202,7 @@ enum TypeEnum: String, Codable, Hashable {
   case interrupted = "interrupted"
   case notstarted = "notstarted"
   case suspended = "suspended"
+  case delayed = "delayed"
 
 }
 

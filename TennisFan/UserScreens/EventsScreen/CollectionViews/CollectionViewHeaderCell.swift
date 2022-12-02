@@ -22,7 +22,7 @@ class CollectionViewHeaderCell: UICollectionViewCell {
   
 }
 
-extension CollectionViewHeaderCell: CollectionViewCellInterface {
+extension CollectionViewHeaderCell {
   override func layoutSubviews() {
     guard let label = label else { return }
     addSubview(label)

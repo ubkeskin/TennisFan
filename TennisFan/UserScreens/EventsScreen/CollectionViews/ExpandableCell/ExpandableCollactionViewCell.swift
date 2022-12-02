@@ -11,11 +11,34 @@ import Alamofire
 
 class ExpandableCollactionViewCell: UICollectionViewListCell {
 
-  
   // MARK: - properties
   static let reusableID: String = String(describing: ExpandableCollactionViewCell.self)
+  let dateFormatter: DateFormatter = CustomDateFormatter(useCase: .ranking)
   var event: Event?
-
+  var homeImage: UIImageView?
+  var awayImage: UIImageView?
+  var homeRanking: [Ranking]?
+  var awayRanking: [Ranking]?
+  
+  lazy var eventDate: String = {
+    let eventDate = dateFormatter.string(from:
+                                          Date(timeIntervalSince1970:
+                                                Double(event?.startTimestamp ?? 0))).prefix {
+      character in
+      character != "-"
+    }
+    return eventDate.description
+  }()
+  lazy var eventHour: String = {
+    let eventHour = dateFormatter.string(from:
+                                          Date(timeIntervalSince1970:
+                                                Double(event?.startTimestamp ?? 0))).drop {
+      character in
+      character != "-"
+    }.dropFirst()
+    return eventHour.description
+  }()
+  
   override init(frame: CGRect) {
     super.init(frame: frame)
   }
@@ -25,50 +48,122 @@ class ExpandableCollactionViewCell: UICollectionViewListCell {
   }
   override func updateConfiguration(using state: UICellConfigurationState) {
     var newConfiguration = ExpandableContentConfiguration().updated(for: state)
-      guard let homeID = event?.homeTeam?.id else { return }
-      guard let awayID = event?.awayTeam?.id else { return }
-      var url = try? Router.playerImage(playerID: homeID).asURLRequest()
-      let requestModifier0 = AnyModifier { request in
-        var r = request
-        r.setValue("4114d82792mshdc17812619ee54dp147cadjsnb495937202d4", forHTTPHeaderField: "X-RapidAPI-Key")
-        return r
-      }
-    let dateFormatter = DateFormatter()
-    dateFormatter.dateStyle = .short
-    dateFormatter.dateFormat = "dd.MM.yy'T'HH:mm"
-    let eventDate = dateFormatter.string(from: Date(timeIntervalSince1970: Double(event?.startTimestamp ?? 0)))
-    let homeImage = UIImageView()
-    let awayImage = UIImageView()
+    guard let homeID = event?.homeTeam?.id,
+          let awayID = event?.awayTeam?.id,
+          let homeUrl = try? Router.playerImage(playerID: homeID).asURLRequest().url,
+          let awayUrl = try? Router.playerImage(playerID: awayID).asURLRequest().url
+    else { return }
     
-    DispatchQueue.main.async(qos: .default) {
-      homeImage.kf.setImage(with: url?.url, options: [.requestModifier(requestModifier0)]) {[self] result in
-          switch result {
+    let dispatchGroup = DispatchGroup()
+    dispatchGroup.enter()
+    DispatchQueue.main.async {
+      self.setHomeImage(with: homeUrl) {
+        dispatchGroup.leave()
+      }
+    }
+    dispatchGroup.enter()
+    DispatchQueue.main.async() {
+      self.setAwayImage(with: awayUrl) {
+        dispatchGroup.leave()
+      }
+    }
+    dispatchGroup.enter()
+    DispatchQueue.main.async() {
+      self.setHomeRanking(with: homeID, completion: {
+        dispatchGroup.leave()
+      })
+    }
+    dispatchGroup.enter()
+    DispatchQueue.main.async() {
+      self.setAwayRanking(with: awayID, completion: {
+        dispatchGroup.leave()
+      })
+    }
+    dispatchGroup.notify(queue: .main) { [self] in
+      guard let homeRanking = homeRanking else { return }
+      guard let awayRanking = awayRanking else { return }
+      setConfiguration(for: &newConfiguration, eventDate: eventDate,
+                       eventHour: eventHour, homeName: event?.homeTeam?.name ?? "",
+                       homeRanking: homeRanking, awayName: event?.awayTeam?.name ?? "",
+                       awayRanking: awayRanking, awayImage: awayImage?.image,
+                       homeImage: homeImage?.image)
+      self.contentConfiguration = newConfiguration
+    }
+  }
+  private func setHomeImage(with url: URL,
+                            completion: @escaping ()-> ()) {
+    let requestModifier0 = AnyModifier { request in
+      var r = request
+      r.setValue("59c909b774msh5cb09e94339cc05p1ef428jsn85ffa3ed06c4",
+                 forHTTPHeaderField: "X-RapidAPI-Key")
+      return r
+    }
+    let imageView = UIImageView()
+    
+      imageView.kf.setImage(with: url, options: [.requestModifier(requestModifier0)]) {
+        result in
+        switch result {
           case .success(let image):
-              newConfiguration.eventDate = eventDate
-              newConfiguration.homeName = event?.homeTeam?.name
-              newConfiguration.awayName = event?.awayTeam?.name
-              newConfiguration.homeImage = image.image
-              contentConfiguration = newConfiguration
-          case .failure(let error):
-          print(error)
-          }
+            self.homeImage = UIImageView()
+            self.homeImage?.image = image.image
+            completion()
+          case .failure(let error): print(error.localizedDescription)
         }
-      url = try? Router.playerImage(playerID: awayID).asURLRequest()
-      
-      awayImage.kf.setImage(with: url?.url, options: [.requestModifier(requestModifier0)]) {[self] result in
-        switch result { 
-          case .success(let image):
-            newConfiguration.eventDate = eventDate
-            newConfiguration.homeName = event?.homeTeam?.name
-            newConfiguration.awayName = event?.awayTeam?.name
-            newConfiguration.awayImage = image.image
-            contentConfiguration = newConfiguration
-          case .failure(let error):
-          print(error)
-        }
+    }
+  }
+  private func setAwayImage(with url: URL,
+                            completion: @escaping ()-> ()) {
+    let requestModifier0 = AnyModifier { request in
+      var r = request
+      r.setValue("59c909b774msh5cb09e94339cc05p1ef428jsn85ffa3ed06c4",
+                 forHTTPHeaderField: "X-RapidAPI-Key")
+      return r
+    }
+    let imageView = UIImageView()
+    
+    imageView.kf.setImage(with: url, options: [.requestModifier(requestModifier0)]) {
+      result in
+      switch result {
+        case .success(let image):
+          self.awayImage = UIImageView()
+          self.awayImage?.image = image.image
+          completion()
+        case .failure(let error): print(error.localizedDescription)
       }
     }
   }
-}
+  private func setHomeRanking(with id: Int, completion: @escaping ()-> ()) {
+    APIManager.shared.fetchPlayerRankings(router: Router.playerRanking(playerID: id)) { ranking in
+      self.homeRanking = ranking
+      completion()
+    }
+  }
+  private func setAwayRanking(with id: Int, completion: @escaping ()-> ()) {
+    APIManager.shared.fetchPlayerRankings(router: Router.playerRanking(playerID: id)) { ranking in
+      self.awayRanking = ranking
+      completion()
+    }
+  }
 
+  private func setConfiguration(for configuration: inout ExpandableContentConfiguration,
+                                eventDate: String,
+                                eventHour: String,
+                                homeName: String,
+                                homeRanking: [Ranking],
+                                awayName: String,
+                                awayRanking: [Ranking],
+                                awayImage: UIImage? = nil,
+                                homeImage: UIImage? = nil) {
+    configuration.eventDate = eventDate
+    configuration.eventHour = eventHour
+    configuration.awayRanking =
+    awayRanking != [] ? String(describing: awayRanking[0].ranking ?? 0) : String(describing: "")
+    configuration.homeRanking =
+    homeRanking != [] ? String(describing: homeRanking[0].ranking ?? 0) : String(describing: "")
+    configuration.awayName = awayName
+    configuration.homeName = homeName
+    configuration.awayImage = awayImage != nil ? awayImage! : UIImage()
+    configuration.homeImage = homeImage != nil ? homeImage! : UIImage()
+  }
+}
 
