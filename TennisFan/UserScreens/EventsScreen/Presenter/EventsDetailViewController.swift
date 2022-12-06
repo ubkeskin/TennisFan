@@ -11,6 +11,16 @@ protocol EventsDetailViewInterface: AnyObject {
 }
 extension EventsDetailViewController: EventsDetailViewInterface {
   func configureDetailView() {
+    guard let homeRanking = viewModel.rankingsDictionary?["homeRanking"],
+          let awayRanking = viewModel.rankingsDictionary?["awayRanking"]
+    else {
+      print(NSError(domain: "Ranking did not initialized correctly", code: 0))
+      return
+    }
+    detailView.homeRanking.text = "current rank: \(homeRanking?.first?.ranking ?? 0)"
+    detailView.awayRanking.text = "current rank: \(awayRanking?.first?.ranking ?? 0)"
+    detailView.awayName.text = viewModel.event?.awayTeam?.name
+    detailView.homeName.text = viewModel.event?.homeTeam?.name
     detailView.awayImage.image = UIImage(data: viewModel.imageDictionary!["awayImage"]!!)
     detailView.homeImage.image = UIImage(data: viewModel.imageDictionary!["homeImage"]!!)
   }
