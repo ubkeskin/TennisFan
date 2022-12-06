@@ -25,6 +25,8 @@
 		634422ED2922BD2B0017A71C /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634422EC2922BD2B0017A71C /* LoginView.swift */; };
 		634422EF2922BD3F0017A71C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634422EE2922BD3F0017A71C /* LoginViewController.swift */; };
 		634422F12922BD4E0017A71C /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634422F02922BD4E0017A71C /* LoginViewModel.swift */; };
+		63479242293F45650092AF2C /* TennisAPIPlayerRankingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63479241293F45650092AF2C /* TennisAPIPlayerRankingModel.swift */; };
+		63479244293F45870092AF2C /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63479243293F45870092AF2C /* DateFormatter.swift */; };
 		63B15EE1292582D80046A583 /* TennisLiveAPIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B15EE0292582D80046A583 /* TennisLiveAPIModel.swift */; };
 		63B47C89293A9881002F244F /* EventsDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B47C88293A9881002F244F /* EventsDetailViewController.swift */; };
 		63B47C8B293A98B4002F244F /* EventDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B47C8A293A98B4002F244F /* EventDetailView.swift */; };
@@ -81,6 +83,8 @@
 		634422EC2922BD2B0017A71C /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		634422EE2922BD3F0017A71C /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		634422F02922BD4E0017A71C /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		63479241293F45650092AF2C /* TennisAPIPlayerRankingModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TennisAPIPlayerRankingModel.swift; sourceTree = "<group>"; };
+		63479243293F45870092AF2C /* DateFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateFormatter.swift; sourceTree = "<group>"; };
 		63B15EE0292582D80046A583 /* TennisLiveAPIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TennisLiveAPIModel.swift; sourceTree = "<group>"; };
 		63B47C88293A9881002F244F /* EventsDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsDetailViewController.swift; sourceTree = "<group>"; };
 		63B47C8A293A98B4002F244F /* EventDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailView.swift; sourceTree = "<group>"; };
@@ -152,6 +156,7 @@
 			isa = PBXGroup;
 			children = (
 				6308512A292CDBAC006042B6 /* UIViewController.swift */,
+				63479243293F45870092AF2C /* DateFormatter.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -210,6 +215,7 @@
 			isa = PBXGroup;
 			children = (
 				63B15EE0292582D80046A583 /* TennisLiveAPIModel.swift */,
+				63479241293F45650092AF2C /* TennisAPIPlayerRankingModel.swift */,
 			);
 			path = EventsModels;
 			sourceTree = "<group>";
@@ -580,6 +586,7 @@
 				63B47C89293A9881002F244F /* EventsDetailViewController.swift in Sources */,
 				6326A6F62925383C00EAA05F /* CollectionViewHeaderCell.swift in Sources */,
 				630851282928D27C006042B6 /* CollectionViewCellInterface.swift in Sources */,
+				63479244293F45870092AF2C /* DateFormatter.swift in Sources */,
 				634422ED2922BD2B0017A71C /* LoginView.swift in Sources */,
 				6326A6D92924A77400EAA05F /* Router.swift in Sources */,
 				63BBD60429227D8300EFF5CC /* SceneDelegate.swift in Sources */,
@@ -587,6 +594,7 @@
 				63B47C8B293A98B4002F244F /* EventDetailView.swift in Sources */,
 				63B47C8D293A9F85002F244F /* EventsDetailViewModel.swift in Sources */,
 				6326A6D52924A72B00EAA05F /* RootViewController.swift in Sources */,
+				63479242293F45650092AF2C /* TennisAPIPlayerRankingModel.swift in Sources */,
 				634422F12922BD4E0017A71C /* LoginViewModel.swift in Sources */,
 				6326A6D72924A74400EAA05F /* RootViewModal.swift in Sources */,
 			);

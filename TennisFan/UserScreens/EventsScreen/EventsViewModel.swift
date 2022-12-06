@@ -15,7 +15,7 @@ extension EventsViewModel: EventsViewModelInterface {
     getResults()
   }
   func getResults() {
-    APIManager.shared.fetchData(router: Router.events(date: date), completion: {[self] results in
+    APIManager.shared.fetchEventData(router: Router.events(date: date), completion: {[self] results in
       matches = results.prefix(through: 20).compactMap({ event in
         event
       })
