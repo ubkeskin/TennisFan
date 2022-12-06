@@ -20,7 +20,7 @@ extension EventsViewController: EventsViewInterface {
 class EventsViewController: UIViewController {
   // MARK: -Enums
   enum ItemDataType: Hashable {
-    case header([Event]), expandable(Event)
+    case header(Event), expandable(Event)
   }
   enum SectionType {
     case main
@@ -30,18 +30,24 @@ class EventsViewController: UIViewController {
   var dataSource: collectionDataSource?
   lazy var viewModel: EventsViewModel? = EventsViewModel(view: self)
   
-  typealias collectionDataSource = UICollectionViewDiffableDataSource<SectionType, ItemDataType>
+  typealias collectionDataSource = UICollectionViewDiffableDataSource<SectionType,
+                                                                      ItemDataType>
   
   override func viewDidLoad() {
     super.viewDidLoad()
     setupUI()
+    collectionView.delegate = self
+
   }
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
     viewModel?.viewWillAppear()
   }
   private func setupUI() {
-    collectionView = try? UICollectionView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height), collectionViewLayout: collectionViewLayout())
+    collectionView =
+    try? UICollectionView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width,
+                                        height: UIScreen.main.bounds.height),
+                          collectionViewLayout: collectionViewLayout())
     view.addSubview(collectionView)
   }
   //MARK: -CollectionVİEW DataSource & Layout
@@ -53,7 +59,8 @@ class EventsViewController: UIViewController {
   }
   
   private func collectionViewDataSource() {
-    let headerCellRegistration = UICollectionView.CellRegistration<UICollectionViewListCell, Event> {cell,indexPath,itemIdentifier in
+    let headerCellRegistration = UICollectionView.CellRegistration<UICollectionViewListCell, Event>
+    {cell,indexPath,itemIdentifier in
       var content = cell.defaultContentConfiguration()
       content.text = itemIdentifier.slug
       cell.contentConfiguration = content
@@ -62,20 +69,28 @@ class EventsViewController: UIViewController {
       cell.accessories = [.outlineDisclosure(options:headerDisclosureOption)]
     }
     
-    let expandableCellRegistration = UICollectionView.CellRegistration<ExpandableCollactionViewCell, Event> {cell,indexPath,itemIdentifier in
+    let expandableCellRegistration = UICollectionView.CellRegistration<ExpandableCollactionViewCell, Event>
+    {cell,indexPath,itemIdentifier in
+      
       cell.event = itemIdentifier
     }
     
-    dataSource = collectionDataSource(collectionView: collectionView, cellProvider: { [self] collectionView, indexPath, itemIdentifier in
-      guard let results = viewModel?.matches else {fatalError()}
+    dataSource = collectionDataSource(collectionView: collectionView, cellProvider:
+                                        { collectionView, indexPath, itemIdentifier in
       
       switch itemIdentifier {
-        case .expandable(_):
-          let collectionViewCell = collectionView.dequeueConfiguredReusableCell(using: expandableCellRegistration, for: indexPath, item: results[indexPath.item - 1])
-          return collectionViewCell
-          
-        case .header(_):
-          let collectionViewCell = collectionView.dequeueConfiguredReusableCell(using: headerCellRegistration, for: indexPath, item: results[indexPath.item] )
+        case .expandable(let expandable):
+            let collectionViewCell = collectionView
+            .dequeueConfiguredReusableCell(using: expandableCellRegistration,
+                                           for: indexPath,
+                                           item: expandable)
+            return collectionViewCell
+
+        case .header(let header):
+          let collectionViewCell = collectionView
+            .dequeueConfiguredReusableCell(using: headerCellRegistration,
+                                           for: indexPath,
+                                           item: header)
           return collectionViewCell
       }
     })
@@ -87,7 +102,7 @@ class EventsViewController: UIViewController {
     var dataSourceSnapshot = dataSource?.snapshot()
     dataSourceSnapshot?.appendSections([.main])
     viewModel?.matches.forEach { result in
-      let headerForCell = ItemDataType.header([result])
+      let headerForCell = ItemDataType.header(result)
       sectionSnapshot.append([headerForCell])
       let expandable = ItemDataType.expandable(result)
       sectionSnapshot.append([expandable], to: headerForCell)
@@ -96,5 +111,21 @@ class EventsViewController: UIViewController {
     dataSource?.apply(sectionSnapshot, to: .main)
   }
 }
-
+extension EventsViewController: UICollectionViewDelegate {
+  func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    print(indexPath)
+    guard let selectedCell = collectionView.cellForItem(at: indexPath) as? ExpandableCollactionViewCell,
+          let selectedEvent = selectedCell.event
+    else { return }
+    let imageDictionary = ["homeImage" : selectedCell.homeImage?.image?.pngData(),
+                           "awayImage" : selectedCell.awayImage?.image?.pngData()]
+    let rankingDictionary = ["homeRanking" : selectedCell.homeRanking,
+                             "awayRanking" : selectedCell.awayRanking]
+    let eventsDetailViewController = EventsDetailViewController()
+    eventsDetailViewController.viewModel.event = selectedEvent
+    eventsDetailViewController.viewModel.imageDictionary = imageDictionary
+    eventsDetailViewController.viewModel.rankingsDictionary = rankingDictionary
+    present(eventsDetailViewController, animated: true)
+  }
+}
 

@@ -9,7 +9,8 @@ import UIKit
 import FirebaseAuth
 
 class LoginViewController: UIViewController {
-  let loginView = LoginView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height))
+  let loginView = LoginView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width,
+                                          height: UIScreen.main.bounds.height))
   var viewModel = LoginViewModel()
   
   override func viewDidLoad() {
@@ -39,11 +40,14 @@ class LoginViewController: UIViewController {
     ])
   }
   
-    @objc func signInAction() {
-    viewModel.login(with: loginView.eMailTextField.text ?? "", password: loginView.passwordTextField.text ?? "", controller: self)
+  @objc func signInAction() {
+    viewModel.login(with: loginView.eMailTextField.text ?? "",
+                    password: loginView.passwordTextField.text ?? "",
+                    controller: self)
   }
   @objc func signUpAction() {
-    viewModel.createUser(with: loginView.eMailTextField.text ?? "", password: loginView.passwordTextField.text ?? "", controller: self)
+    viewModel.createUser(with: loginView.eMailTextField.text ?? "",
+                         password: loginView.passwordTextField.text ?? "", controller: self)
   }
   @objc func startGoogleAuth() {
     viewModel.performGoogleSignInFlow(controller: self)

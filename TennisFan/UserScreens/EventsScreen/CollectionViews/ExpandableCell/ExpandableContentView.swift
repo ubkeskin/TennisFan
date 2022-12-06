@@ -34,67 +34,110 @@ class ExpandableContentView: UIView, UIContentView {
   }()
   lazy var homeName: UILabel = {
     let homeName = UILabel()
+    homeName.font = .preferredFont(forTextStyle: .subheadline)
+    homeName.numberOfLines = 1
     homeName.text = currentConfiguration.homeName
     return homeName
   }()
   lazy var awayName: UILabel = {
     let awayName = UILabel()
+    awayName.font = .preferredFont(forTextStyle: .subheadline)
+    awayName.numberOfLines = 1
     awayName.text = currentConfiguration.awayName
     return awayName
   }()
   lazy var homeRanking: UILabel = {
     let homeRanking = UILabel()
+    homeRanking.numberOfLines = 1
     homeRanking.text = currentConfiguration.homeRanking
     return homeRanking
   }()
   lazy var awayRanking: UILabel = {
     let awayRanking = UILabel()
+    awayRanking.numberOfLines = 1
     awayRanking.text = currentConfiguration.awayRanking
     return awayRanking
   }()
-  lazy var stackView: UIStackView = {
+  lazy var eventDate: UILabel = {
+    let eventDate = UILabel()
+    eventDate.numberOfLines = 0
+    eventDate.text = currentConfiguration.eventDate
+    return eventDate
+  }()
+  lazy var eventHour: UILabel = {
+    let eventHour = UILabel()
+    eventHour.numberOfLines = 0
+    eventHour.text = currentConfiguration.eventHour
+    return eventHour
+  }()
+  lazy var targetSign: UIImageView = {
+    let targetSign = UIImageView()
+    
+    targetSign.image = UIImage(systemName: "circle.circle")
+    targetSign.tintColor = .orange
+    
+    return targetSign
+  }()
+  lazy var eventStack: UIStackView = {
     let homeLabelStack = UIStackView(arrangedSubviews: [homeName, homeRanking])
     homeLabelStack.axis = .vertical
-    homeLabelStack.alignment = .leading
-    homeLabelStack.distribution = .equalCentering
-    let homeStack = UIStackView(arrangedSubviews: [/*homeImage,*/ homeLabelStack])
+    homeLabelStack.alignment = .center
+    homeLabelStack.distribution = .fill
+    let homeStack = UIStackView(arrangedSubviews: [homeImage, homeLabelStack])
     homeStack.axis = .horizontal
     homeStack.alignment = .fill
     homeStack.distribution = .fillEqually
     let awayLabelStack = UIStackView(arrangedSubviews: [awayName, awayRanking])
     awayLabelStack.axis = .vertical
-    awayLabelStack.alignment = .leading
-    awayLabelStack.distribution = .equalCentering
-    let awayStack = UIStackView(arrangedSubviews: [/*awayImage,*/ awayLabelStack])
+    awayLabelStack.alignment = .center
+    awayLabelStack.distribution = .fill
+    let awayStack = UIStackView(arrangedSubviews: [awayLabelStack, awayImage])
     awayStack.axis = .horizontal
     awayStack.alignment = .fill
     awayStack.distribution = .fillEqually
-    let stackView = UIStackView(arrangedSubviews: [homeStack, awayStack])
-    stackView.axis = .horizontal
-    stackView.alignment = .fill
-    stackView.distribution = .fillEqually
-    return stackView
+    let eventStack = UIStackView(arrangedSubviews: [homeStack, awayStack])
+    eventStack.axis = .horizontal
+    eventStack.spacing = 10
+    eventStack.alignment = .fill
+    eventStack.distribution = .fillEqually
+    return eventStack
+  }()
+  lazy var dateStack: UIStackView = {
+    let dateStack = UIStackView(arrangedSubviews: [eventDate, targetSign, eventHour])
+    dateStack.axis = .horizontal
+    dateStack.spacing = 5
+    dateStack.alignment = .center
+    dateStack.distribution = .fill
+    return dateStack
   }()
   
   init(configuration: ExpandableContentConfiguration) {
     super.init(frame: .zero)
     currentConfiguration = configuration
-    setupViews()
     apply(configuration: configuration)
   }
   
   required init?(coder: NSCoder) {
     fatalError("init(coder:) has not been implemented")
   }
+  override func layoutSubviews() {
+    setupViews()
+  }
   private func setupViews() {
-    addSubview(stackView)
-    stackView.translatesAutoresizingMaskIntoConstraints = false
+    addSubview(eventStack)
+    addSubview(dateStack)
+    eventStack.translatesAutoresizingMaskIntoConstraints = false
+    dateStack.translatesAutoresizingMaskIntoConstraints = false
     NSLayoutConstraint.activate([
-      stackView.topAnchor.constraint(equalTo: layoutMarginsGuide.topAnchor),
-      stackView.bottomAnchor.constraint(equalTo: layoutMarginsGuide.bottomAnchor),
-      stackView.leftAnchor.constraint(equalTo: layoutMarginsGuide.leftAnchor),
-      stackView.rightAnchor.constraint(equalTo: layoutMarginsGuide.rightAnchor)
+      dateStack.topAnchor.constraint(equalTo: layoutMarginsGuide.topAnchor),
+      dateStack.bottomAnchor.constraint(equalTo: layoutMarginsGuide.topAnchor, constant: 40),
+      dateStack.centerXAnchor.constraint(equalTo: layoutMarginsGuide.centerXAnchor),
+      eventStack.topAnchor.constraint(equalTo: layoutMarginsGuide.topAnchor, constant: 50),
+      eventStack.bottomAnchor.constraint(equalTo: layoutMarginsGuide.bottomAnchor, constant: -5),
+      eventStack.leftAnchor.constraint(equalTo: layoutMarginsGuide.leftAnchor),
+      eventStack.rightAnchor.constraint(equalTo: layoutMarginsGuide.rightAnchor)
     ])
+    invalidateIntrinsicContentSize()
   }
   private func apply(configuration: ExpandableContentConfiguration) {
     guard currentConfiguration != configuration else {return}
@@ -106,6 +149,5 @@ class ExpandableContentView: UIView, UIContentView {
     awayName.text = configuration.awayName
     awayRanking.text = configuration.awayRanking
     awayImage.image = configuration.awayImage
-    
   }
 }
