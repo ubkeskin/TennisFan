@@ -241,6 +241,7 @@ enum Flag: String, Codable, Hashable {
   case other = "other"
   case wheelchairs = "wheelchairs"
   case wta = "wta"
+  case exhibition = "exhibition"
 }
 
 enum CategoryName: String, Codable, Hashable {
@@ -256,6 +257,7 @@ enum CategoryName: String, Codable, Hashable {
   case other = "Other"
   case wheelchairs = "Wheelchairs"
   case wta = "WTA"
+  case exhibition = "Exhibition"
 }
 
 // MARK: - UniqueTournament

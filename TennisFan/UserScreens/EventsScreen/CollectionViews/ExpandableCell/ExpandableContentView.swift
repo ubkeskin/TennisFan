@@ -22,52 +22,42 @@ class ExpandableContentView: UIView, UIContentView {
   }
   lazy var homeImage: UIImageView = {
     let homeImage = UIImageView()
-    homeImage.image = currentConfiguration.homeImage
     homeImage.contentMode = .scaleAspectFit
     return homeImage
   }()
   lazy var awayImage: UIImageView = {
     let awayImage = UIImageView()
-    awayImage.image = currentConfiguration.awayImage
     awayImage.contentMode = .scaleAspectFit
     return awayImage
   }()
   lazy var homeName: UILabel = {
     let homeName = UILabel()
     homeName.font = .preferredFont(forTextStyle: .subheadline)
-    homeName.numberOfLines = 1
-    homeName.text = currentConfiguration.homeName
     return homeName
   }()
   lazy var awayName: UILabel = {
     let awayName = UILabel()
     awayName.font = .preferredFont(forTextStyle: .subheadline)
-    awayName.numberOfLines = 1
-    awayName.text = currentConfiguration.awayName
     return awayName
   }()
   lazy var homeRanking: UILabel = {
     let homeRanking = UILabel()
     homeRanking.numberOfLines = 1
-    homeRanking.text = currentConfiguration.homeRanking
     return homeRanking
   }()
   lazy var awayRanking: UILabel = {
     let awayRanking = UILabel()
     awayRanking.numberOfLines = 1
-    awayRanking.text = currentConfiguration.awayRanking
     return awayRanking
   }()
   lazy var eventDate: UILabel = {
     let eventDate = UILabel()
     eventDate.numberOfLines = 0
-    eventDate.text = currentConfiguration.eventDate
     return eventDate
   }()
   lazy var eventHour: UILabel = {
     let eventHour = UILabel()
     eventHour.numberOfLines = 0
-    eventHour.text = currentConfiguration.eventHour
     return eventHour
   }()
   lazy var targetSign: UIImageView = {
@@ -114,7 +104,7 @@ class ExpandableContentView: UIView, UIContentView {
   init(configuration: ExpandableContentConfiguration) {
     super.init(frame: .zero)
     currentConfiguration = configuration
-    apply(configuration: configuration)
+    setValus()
   }
   
   required init?(coder: NSCoder) {
@@ -142,12 +132,23 @@ class ExpandableContentView: UIView, UIContentView {
   private func apply(configuration: ExpandableContentConfiguration) {
     guard currentConfiguration != configuration else {return}
     currentConfiguration = configuration
-    
+    eventDate.text = configuration.eventDate
+    eventHour.text = configuration.eventHour
     homeName.text = configuration.homeName
     homeRanking.text = configuration.homeRanking
     homeImage.image = configuration.homeImage
     awayName.text = configuration.awayName
     awayRanking.text = configuration.awayRanking
     awayImage.image = configuration.awayImage
+  }
+  private func setValus() {
+    eventDate.text = currentConfiguration.eventDate
+    eventHour.text = currentConfiguration.eventHour
+    homeName.text = currentConfiguration.homeName
+    homeRanking.text = currentConfiguration.homeRanking
+    homeImage.image = currentConfiguration.homeImage
+    awayName.text = currentConfiguration.awayName
+    awayRanking.text = currentConfiguration.awayRanking
+    awayImage.image = currentConfiguration.awayImage
   }
 }

@@ -11,16 +11,20 @@ protocol EventsDetailViewInterface: AnyObject {
 }
 extension EventsDetailViewController: EventsDetailViewInterface {
   func configureDetailView() {
-    guard let homeRanking = viewModel.rankingsDictionary?["homeRanking"],
-          let awayRanking = viewModel.rankingsDictionary?["awayRanking"]
-    else {
-      print(NSError(domain: "Ranking did not initialized correctly", code: 0))
-      return
-    }
-    detailView.homeRanking.text = "current rank: \(homeRanking?.first?.ranking ?? 0)"
-    detailView.awayRanking.text = "current rank: \(awayRanking?.first?.ranking ?? 0)"
-    detailView.awayName.text = viewModel.event?.awayTeam?.name
-    detailView.homeName.text = viewModel.event?.homeTeam?.name
+    detailView.tournament.text = "\(viewModel.tournament)"
+    detailView.date.text = "\(viewModel.date)"
+    detailView.time.text = "\(viewModel.time)"
+    detailView.round.text = "\(viewModel.round)"
+    detailView.homeBestRanking.text = "best ranking: \(viewModel.homeBestRanking)"
+    detailView.awayBestRanking.text = "best ranking: \(viewModel.awayBestRanking)"
+    detailView.homeCountry.text = "country: \(viewModel.homeCountry)"
+    detailView.awayCountry.text = "country: \(viewModel.awayCountry)"
+    detailView.homeTournamentsPlayed.text = "tournaments \nplayed: \(viewModel.homeTournamentsPlayed)"
+    detailView.awayTournamentsPlayed.text = "tournaments \nplayed: \(viewModel.awayTournamentsPlayed)"
+    detailView.homeRanking.text = "ranking: \(viewModel.homeRanking)"
+    detailView.awayRanking.text = "ranking: \(viewModel.awayRanking)"
+    detailView.awayName.text = viewModel.awayName.capitalized
+    detailView.homeName.text = viewModel.homeName.capitalized
     detailView.awayImage.image = UIImage(data: viewModel.imageDictionary!["awayImage"]!!)
     detailView.homeImage.image = UIImage(data: viewModel.imageDictionary!["homeImage"]!!)
   }

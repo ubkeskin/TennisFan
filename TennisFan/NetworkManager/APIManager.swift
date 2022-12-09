@@ -17,8 +17,13 @@ class APIManager {
     }
   }
   func fetchPlayerRankings(router: Router, completion: @escaping ([Ranking]) -> ()) {
-    AF.request(router).response(completionHandler: { response in
-      guard let data = response.data else { return }
+    AF.request(router).validate().response(completionHandler: { response in
+      guard let data = response.data
+      else {
+        // If response fails to return data.
+        completion([])
+        return
+      }
       let decoder = JSONDecoder()
       let rankings = try? decoder.decode(TennisAPIPlayerRankingsModel.self, from: data)
       completion(rankings?.rankings ?? [])

@@ -18,4 +18,7 @@ class RootViewController: UINavigationController, UINavigationControllerDelegate
       self.pushViewController(vc, animated: false)
     }
   }
+  override func viewWillAppear(_ animated: Bool) {
+    navigationBar.isHidden = true
+  }
 }

@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		121D88245F5CF666D6644938 /* Pods_TennisFanTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F5CF30004288BAFDB002179 /* Pods_TennisFanTests.framework */; };
-		630851282928D27C006042B6 /* CollectionViewCellInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630851272928D27B006042B6 /* CollectionViewCellInterface.swift */; };
 		6308512B292CDBAC006042B6 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6308512A292CDBAC006042B6 /* UIViewController.swift */; };
 		6308512E292D013A006042B6 /* ExpandableViewContentConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6308512D292D013A006042B6 /* ExpandableViewContentConfiguration.swift */; };
 		63085130292D014B006042B6 /* ExpandableContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6308512F292D014B006042B6 /* ExpandableContentView.swift */; };
@@ -18,7 +17,6 @@
 		6326A6DC2925111300EAA05F /* EventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6326A6DB2925111300EAA05F /* EventsViewController.swift */; };
 		6326A6F1292521DF00EAA05F /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6326A6F0292521DF00EAA05F /* APIManager.swift */; };
 		6326A6F3292522E500EAA05F /* EventsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6326A6F2292522E500EAA05F /* EventsViewModel.swift */; };
-		6326A6F62925383C00EAA05F /* CollectionViewHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6326A6F52925383C00EAA05F /* CollectionViewHeaderCell.swift */; };
 		6326A6F829253D7500EAA05F /* ExpandableCollactionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6326A6F729253D7500EAA05F /* ExpandableCollactionViewCell.swift */; };
 		634422D4292281DF0017A71C /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 634422D3292281DF0017A71C /* Alamofire */; };
 		634422D7292281F50017A71C /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 634422D6292281F50017A71C /* Kingfisher */; };
@@ -65,7 +63,6 @@
 /* Begin PBXFileReference section */
 		30344F26F961F03F83AA76A1 /* Pods-TennisFan-TennisFanUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TennisFan-TennisFanUITests.release.xcconfig"; path = "Target Support Files/Pods-TennisFan-TennisFanUITests/Pods-TennisFan-TennisFanUITests.release.xcconfig"; sourceTree = "<group>"; };
 		4A3A4CCBE7A88C403C0B5D82 /* Pods-TennisFan-TennisFanUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TennisFan-TennisFanUITests.debug.xcconfig"; path = "Target Support Files/Pods-TennisFan-TennisFanUITests/Pods-TennisFan-TennisFanUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		630851272928D27B006042B6 /* CollectionViewCellInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCellInterface.swift; sourceTree = "<group>"; };
 		6308512A292CDBAC006042B6 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		6308512D292D013A006042B6 /* ExpandableViewContentConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandableViewContentConfiguration.swift; sourceTree = "<group>"; };
 		6308512F292D014B006042B6 /* ExpandableContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandableContentView.swift; sourceTree = "<group>"; };
@@ -75,7 +72,6 @@
 		6326A6DB2925111300EAA05F /* EventsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsViewController.swift; sourceTree = "<group>"; };
 		6326A6F0292521DF00EAA05F /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		6326A6F2292522E500EAA05F /* EventsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsViewModel.swift; sourceTree = "<group>"; };
-		6326A6F52925383C00EAA05F /* CollectionViewHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewHeaderCell.swift; sourceTree = "<group>"; };
 		6326A6F729253D7500EAA05F /* ExpandableCollactionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandableCollactionViewCell.swift; sourceTree = "<group>"; };
 		634422D8292283430017A71C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "TennisFan/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		634422EC2922BD2B0017A71C /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
@@ -193,11 +189,11 @@
 		6326A6DD2925111B00EAA05F /* EventsScreen */ = {
 			isa = PBXGroup;
 			children = (
-				6326A6F42925382C00EAA05F /* CollectionViews */,
-				6326A6E32925193C00EAA05F /* EventsModels */,
-				63B47C87293A9859002F244F /* Presenter */,
 				6326A6DB2925111300EAA05F /* EventsViewController.swift */,
 				6326A6F2292522E500EAA05F /* EventsViewModel.swift */,
+				6326A6F42925382C00EAA05F /* CollectionViews */,
+				63B47C87293A9859002F244F /* Presenter */,
+				6326A6E32925193C00EAA05F /* EventsModels */,
 			);
 			path = EventsScreen;
 			sourceTree = "<group>";
@@ -223,9 +219,7 @@
 		6326A6F42925382C00EAA05F /* CollectionViews */ = {
 			isa = PBXGroup;
 			children = (
-				6326A6F52925383C00EAA05F /* CollectionViewHeaderCell.swift */,
 				6308512C292D0111006042B6 /* ExpandableCell */,
-				630851272928D27B006042B6 /* CollectionViewCellInterface.swift */,
 			);
 			path = CollectionViews;
 			sourceTree = "<group>";
@@ -584,8 +578,6 @@
 				6326A6F3292522E500EAA05F /* EventsViewModel.swift in Sources */,
 				6308512E292D013A006042B6 /* ExpandableViewContentConfiguration.swift in Sources */,
 				63B47C89293A9881002F244F /* EventsDetailViewController.swift in Sources */,
-				6326A6F62925383C00EAA05F /* CollectionViewHeaderCell.swift in Sources */,
-				630851282928D27C006042B6 /* CollectionViewCellInterface.swift in Sources */,
 				63479244293F45870092AF2C /* DateFormatter.swift in Sources */,
 				634422ED2922BD2B0017A71C /* LoginView.swift in Sources */,
 				6326A6D92924A77400EAA05F /* Router.swift in Sources */,

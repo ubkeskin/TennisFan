@@ -61,8 +61,10 @@ class EventsViewController: UIViewController {
   private func collectionViewDataSource() {
     let headerCellRegistration = UICollectionView.CellRegistration<UICollectionViewListCell, Event>
     {cell,indexPath,itemIdentifier in
+      let homeName = itemIdentifier.homeTeam?.name ?? ""
+      let awayName = itemIdentifier.awayTeam?.name ?? ""
       var content = cell.defaultContentConfiguration()
-      content.text = itemIdentifier.slug
+      content.text = "\(homeName) vs \(awayName)"
       cell.contentConfiguration = content
       
       let headerDisclosureOption = UICellAccessory.OutlineDisclosureOptions(style: .header)
@@ -113,10 +115,11 @@ class EventsViewController: UIViewController {
 }
 extension EventsViewController: UICollectionViewDelegate {
   func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-    print(indexPath)
+    
     guard let selectedCell = collectionView.cellForItem(at: indexPath) as? ExpandableCollactionViewCell,
           let selectedEvent = selectedCell.event
     else { return }
+
     let imageDictionary = ["homeImage" : selectedCell.homeImage?.image?.pngData(),
                            "awayImage" : selectedCell.awayImage?.image?.pngData()]
     let rankingDictionary = ["homeRanking" : selectedCell.homeRanking,
