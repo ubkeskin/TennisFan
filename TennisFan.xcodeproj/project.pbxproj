@@ -39,6 +39,10 @@
 		63BBD62329227D8400EFF5CC /* TennisFanUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BBD62229227D8400EFF5CC /* TennisFanUITests.swift */; };
 		63BBD62529227D8400EFF5CC /* TennisFanUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BBD62429227D8400EFF5CC /* TennisFanUITestsLaunchTests.swift */; };
 		63BBD63229227E9800EFF5CC /* TabbarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BBD63129227E9800EFF5CC /* TabbarViewController.swift */; };
+		63FB5A172949FBA3000ECED3 /* ATPRankingsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FB5A162949FBA3000ECED3 /* ATPRankingsModel.swift */; };
+		63FB5A19294A0108000ECED3 /* WTARankingsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FB5A18294A0108000ECED3 /* WTARankingsModel.swift */; };
+		63FB5A1B294A028D000ECED3 /* RankingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FB5A1A294A028D000ECED3 /* RankingsViewModel.swift */; };
+		63FB5A1D294A0299000ECED3 /* RankingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FB5A1C294A0299000ECED3 /* RankingsViewController.swift */; };
 		9F6A8D5CDE10C69A09F15451 /* Pods_TennisFan.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64C187A60E7C7B0FAAAA61C3 /* Pods_TennisFan.framework */; };
 		A88C4D4A29248007D98A00F6 /* Pods_TennisFan_TennisFanUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA97597CBD4B08B1881C9DEE /* Pods_TennisFan_TennisFanUITests.framework */; };
 /* End PBXBuildFile section */
@@ -96,6 +100,10 @@
 		63BBD62229227D8400EFF5CC /* TennisFanUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TennisFanUITests.swift; sourceTree = "<group>"; };
 		63BBD62429227D8400EFF5CC /* TennisFanUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TennisFanUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		63BBD63129227E9800EFF5CC /* TabbarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarViewController.swift; sourceTree = "<group>"; };
+		63FB5A162949FBA3000ECED3 /* ATPRankingsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ATPRankingsModel.swift; sourceTree = "<group>"; };
+		63FB5A18294A0108000ECED3 /* WTARankingsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WTARankingsModel.swift; sourceTree = "<group>"; };
+		63FB5A1A294A028D000ECED3 /* RankingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingsViewModel.swift; sourceTree = "<group>"; };
+		63FB5A1C294A0299000ECED3 /* RankingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingsViewController.swift; sourceTree = "<group>"; };
 		64C187A60E7C7B0FAAAA61C3 /* Pods_TennisFan.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TennisFan.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C8C81B31BEF600C4213DE61 /* Pods-TennisFan.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TennisFan.release.xcconfig"; path = "Target Support Files/Pods-TennisFan/Pods-TennisFan.release.xcconfig"; sourceTree = "<group>"; };
 		9F5CF30004288BAFDB002179 /* Pods_TennisFanTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TennisFanTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -182,6 +190,7 @@
 				63BBD60529227D8300EFF5CC /* ViewController.swift */,
 				63BBD63129227E9800EFF5CC /* TabbarViewController.swift */,
 				6326A6DD2925111B00EAA05F /* EventsScreen */,
+				63FB5A142949FB68000ECED3 /* Rankings */,
 			);
 			path = UserScreens;
 			sourceTree = "<group>";
@@ -307,6 +316,25 @@
 				63BBD62429227D8400EFF5CC /* TennisFanUITestsLaunchTests.swift */,
 			);
 			path = TennisFanUITests;
+			sourceTree = "<group>";
+		};
+		63FB5A142949FB68000ECED3 /* Rankings */ = {
+			isa = PBXGroup;
+			children = (
+				63FB5A1A294A028D000ECED3 /* RankingsViewModel.swift */,
+				63FB5A1C294A0299000ECED3 /* RankingsViewController.swift */,
+				63FB5A152949FB90000ECED3 /* RankingsModels */,
+			);
+			path = Rankings;
+			sourceTree = "<group>";
+		};
+		63FB5A152949FB90000ECED3 /* RankingsModels */ = {
+			isa = PBXGroup;
+			children = (
+				63FB5A162949FBA3000ECED3 /* ATPRankingsModel.swift */,
+				63FB5A18294A0108000ECED3 /* WTARankingsModel.swift */,
+			);
+			path = RankingsModels;
 			sourceTree = "<group>";
 		};
 		FE06B5F9659761CEC222C534 /* Frameworks */ = {
@@ -567,6 +595,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6326A6DC2925111300EAA05F /* EventsViewController.swift in Sources */,
+				63FB5A1B294A028D000ECED3 /* RankingsViewModel.swift in Sources */,
 				6326A6F1292521DF00EAA05F /* APIManager.swift in Sources */,
 				6308512B292CDBAC006042B6 /* UIViewController.swift in Sources */,
 				63B15EE1292582D80046A583 /* TennisLiveAPIModel.swift in Sources */,
@@ -574,10 +603,12 @@
 				634422EF2922BD3F0017A71C /* LoginViewController.swift in Sources */,
 				63BBD60629227D8300EFF5CC /* ViewController.swift in Sources */,
 				63BBD63229227E9800EFF5CC /* TabbarViewController.swift in Sources */,
+				63FB5A19294A0108000ECED3 /* WTARankingsModel.swift in Sources */,
 				63BBD60229227D8300EFF5CC /* AppDelegate.swift in Sources */,
 				6326A6F3292522E500EAA05F /* EventsViewModel.swift in Sources */,
 				6308512E292D013A006042B6 /* ExpandableViewContentConfiguration.swift in Sources */,
 				63B47C89293A9881002F244F /* EventsDetailViewController.swift in Sources */,
+				63FB5A1D294A0299000ECED3 /* RankingsViewController.swift in Sources */,
 				63479244293F45870092AF2C /* DateFormatter.swift in Sources */,
 				634422ED2922BD2B0017A71C /* LoginView.swift in Sources */,
 				6326A6D92924A77400EAA05F /* Router.swift in Sources */,
@@ -586,6 +617,7 @@
 				63B47C8B293A98B4002F244F /* EventDetailView.swift in Sources */,
 				63B47C8D293A9F85002F244F /* EventsDetailViewModel.swift in Sources */,
 				6326A6D52924A72B00EAA05F /* RootViewController.swift in Sources */,
+				63FB5A172949FBA3000ECED3 /* ATPRankingsModel.swift in Sources */,
 				63479242293F45650092AF2C /* TennisAPIPlayerRankingModel.swift in Sources */,
 				634422F12922BD4E0017A71C /* LoginViewModel.swift in Sources */,
 				6326A6D72924A74400EAA05F /* RootViewModal.swift in Sources */,

@@ -8,7 +8,7 @@
 import Foundation
 import Alamofire
 
-enum TPType {
+enum TPType: String {
   case atp, wta
 }
 

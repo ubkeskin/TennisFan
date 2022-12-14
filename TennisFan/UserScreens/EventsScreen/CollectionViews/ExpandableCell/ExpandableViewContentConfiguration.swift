@@ -27,9 +27,9 @@ struct ExpandableContentConfiguration: UIContentConfiguration, Equatable {
       return self
     }
     var updatedConfiguration = self
-    //    if state.isExpanded {
-    //      // configure selected state logic
-    //    }
+        if state.isSelected {
+          // configure selected state logic
+        }
     return updatedConfiguration
   }
 }

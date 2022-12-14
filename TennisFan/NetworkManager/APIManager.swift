@@ -16,6 +16,18 @@ class APIManager {
       completion(events)
     }
   }
+  func fetchATPRankingData(completion: @escaping ([Rankings]) -> ()) {
+    AF.request(Router.rankings(gender: .atp)).responseDecodable(of:ATPRankingsModel.self) { response in
+      guard let rankings = response.value?.rankings else {return}
+      completion(rankings)
+    }
+  }
+  func fetchWTARankingData(completion: @escaping ([Rankings]) -> ()) {
+    AF.request(Router.rankings(gender: .wta)).responseDecodable(of:WTARankingsModel.self) { response in
+      guard let rankings = response.value?.rankings else {return}
+      completion(rankings)
+    }
+  }
   func fetchPlayerRankings(router: Router, completion: @escaping ([Ranking]) -> ()) {
     AF.request(router).validate().response(completionHandler: { response in
       guard let data = response.data
