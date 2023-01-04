@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		121D88245F5CF666D6644938 /* Pods_TennisFanTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F5CF30004288BAFDB002179 /* Pods_TennisFanTests.framework */; };
+		3DB9C0C0C570B3ABDE583527 /* Pods_TennisFan_TennisFanUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E333F84F5660006A29833BDA /* Pods_TennisFan_TennisFanUITests.framework */; };
 		6308512B292CDBAC006042B6 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6308512A292CDBAC006042B6 /* UIViewController.swift */; };
 		6308512E292D013A006042B6 /* ExpandableViewContentConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6308512D292D013A006042B6 /* ExpandableViewContentConfiguration.swift */; };
 		63085130292D014B006042B6 /* ExpandableContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6308512F292D014B006042B6 /* ExpandableContentView.swift */; };
@@ -30,6 +30,8 @@
 		63B47C89293A9881002F244F /* EventsDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B47C88293A9881002F244F /* EventsDetailViewController.swift */; };
 		63B47C8B293A98B4002F244F /* EventDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B47C8A293A98B4002F244F /* EventDetailView.swift */; };
 		63B47C8D293A9F85002F244F /* EventsDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B47C8C293A9F85002F244F /* EventsDetailViewModel.swift */; };
+		63BAE08429656D5B005202A7 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 63BAE08329656D5B005202A7 /* FirebaseAuth */; };
+		63BAE08629656D5B005202A7 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 63BAE08529656D5B005202A7 /* FirebaseFirestore */; };
 		63BBD60229227D8300EFF5CC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BBD60129227D8300EFF5CC /* AppDelegate.swift */; };
 		63BBD60429227D8300EFF5CC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BBD60329227D8300EFF5CC /* SceneDelegate.swift */; };
 		63BBD60629227D8300EFF5CC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BBD60529227D8300EFF5CC /* ViewController.swift */; };
@@ -43,8 +45,8 @@
 		63FB5A19294A0108000ECED3 /* WTARankingsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FB5A18294A0108000ECED3 /* WTARankingsModel.swift */; };
 		63FB5A1B294A028D000ECED3 /* RankingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FB5A1A294A028D000ECED3 /* RankingsViewModel.swift */; };
 		63FB5A1D294A0299000ECED3 /* RankingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FB5A1C294A0299000ECED3 /* RankingsViewController.swift */; };
-		9F6A8D5CDE10C69A09F15451 /* Pods_TennisFan.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64C187A60E7C7B0FAAAA61C3 /* Pods_TennisFan.framework */; };
-		A88C4D4A29248007D98A00F6 /* Pods_TennisFan_TennisFanUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA97597CBD4B08B1881C9DEE /* Pods_TennisFan_TennisFanUITests.framework */; };
+		D0D714A0B9F8969247DA624F /* Pods_TennisFan.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5ACF7D13469A1AD5C285036 /* Pods_TennisFan.framework */; };
+		FB310DE08DD431D587D12ADC /* Pods_TennisFanTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC7E8EDC42E5241CCF6B9668 /* Pods_TennisFanTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,8 +67,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		30344F26F961F03F83AA76A1 /* Pods-TennisFan-TennisFanUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TennisFan-TennisFanUITests.release.xcconfig"; path = "Target Support Files/Pods-TennisFan-TennisFanUITests/Pods-TennisFan-TennisFanUITests.release.xcconfig"; sourceTree = "<group>"; };
-		4A3A4CCBE7A88C403C0B5D82 /* Pods-TennisFan-TennisFanUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TennisFan-TennisFanUITests.debug.xcconfig"; path = "Target Support Files/Pods-TennisFan-TennisFanUITests/Pods-TennisFan-TennisFanUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		1671BD53736B5CD5D0C9D8AA /* Pods-TennisFanTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TennisFanTests.debug.xcconfig"; path = "Target Support Files/Pods-TennisFanTests/Pods-TennisFanTests.debug.xcconfig"; sourceTree = "<group>"; };
+		21E8C0AFFBAAE467EF14F6F0 /* Pods-TennisFan.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TennisFan.release.xcconfig"; path = "Target Support Files/Pods-TennisFan/Pods-TennisFan.release.xcconfig"; sourceTree = "<group>"; };
+		25E8F5E70BC4BABD1B39117B /* Pods-TennisFanTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TennisFanTests.release.xcconfig"; path = "Target Support Files/Pods-TennisFanTests/Pods-TennisFanTests.release.xcconfig"; sourceTree = "<group>"; };
 		6308512A292CDBAC006042B6 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		6308512D292D013A006042B6 /* ExpandableViewContentConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandableViewContentConfiguration.swift; sourceTree = "<group>"; };
 		6308512F292D014B006042B6 /* ExpandableContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandableContentView.swift; sourceTree = "<group>"; };
@@ -104,13 +107,12 @@
 		63FB5A18294A0108000ECED3 /* WTARankingsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WTARankingsModel.swift; sourceTree = "<group>"; };
 		63FB5A1A294A028D000ECED3 /* RankingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingsViewModel.swift; sourceTree = "<group>"; };
 		63FB5A1C294A0299000ECED3 /* RankingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingsViewController.swift; sourceTree = "<group>"; };
-		64C187A60E7C7B0FAAAA61C3 /* Pods_TennisFan.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TennisFan.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		9C8C81B31BEF600C4213DE61 /* Pods-TennisFan.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TennisFan.release.xcconfig"; path = "Target Support Files/Pods-TennisFan/Pods-TennisFan.release.xcconfig"; sourceTree = "<group>"; };
-		9F5CF30004288BAFDB002179 /* Pods_TennisFanTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TennisFanTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		B5C2DE7E16DB7B25D66881D3 /* Pods-TennisFan.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TennisFan.debug.xcconfig"; path = "Target Support Files/Pods-TennisFan/Pods-TennisFan.debug.xcconfig"; sourceTree = "<group>"; };
-		BEC93EFCDCCA7D8D1907F57C /* Pods-TennisFanTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TennisFanTests.release.xcconfig"; path = "Target Support Files/Pods-TennisFanTests/Pods-TennisFanTests.release.xcconfig"; sourceTree = "<group>"; };
-		F87535E270F07CD5FE13E5A9 /* Pods-TennisFanTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TennisFanTests.debug.xcconfig"; path = "Target Support Files/Pods-TennisFanTests/Pods-TennisFanTests.debug.xcconfig"; sourceTree = "<group>"; };
-		FA97597CBD4B08B1881C9DEE /* Pods_TennisFan_TennisFanUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TennisFan_TennisFanUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8BA6282CEB47FB9C8BC7D0CF /* Pods-TennisFan-TennisFanUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TennisFan-TennisFanUITests.debug.xcconfig"; path = "Target Support Files/Pods-TennisFan-TennisFanUITests/Pods-TennisFan-TennisFanUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		C4337746E7351FC8C6C0F62F /* Pods-TennisFan.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TennisFan.debug.xcconfig"; path = "Target Support Files/Pods-TennisFan/Pods-TennisFan.debug.xcconfig"; sourceTree = "<group>"; };
+		CC7E8EDC42E5241CCF6B9668 /* Pods_TennisFanTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TennisFanTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE1574F1B5094F09A2E5185F /* Pods-TennisFan-TennisFanUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TennisFan-TennisFanUITests.release.xcconfig"; path = "Target Support Files/Pods-TennisFan-TennisFanUITests/Pods-TennisFan-TennisFanUITests.release.xcconfig"; sourceTree = "<group>"; };
+		D5ACF7D13469A1AD5C285036 /* Pods_TennisFan.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TennisFan.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E333F84F5660006A29833BDA /* Pods_TennisFan_TennisFanUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TennisFan_TennisFanUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,7 +122,9 @@
 			files = (
 				634422D7292281F50017A71C /* Kingfisher in Frameworks */,
 				634422D4292281DF0017A71C /* Alamofire in Frameworks */,
-				9F6A8D5CDE10C69A09F15451 /* Pods_TennisFan.framework in Frameworks */,
+				63BAE08629656D5B005202A7 /* FirebaseFirestore in Frameworks */,
+				63BAE08429656D5B005202A7 /* FirebaseAuth in Frameworks */,
+				D0D714A0B9F8969247DA624F /* Pods_TennisFan.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -128,7 +132,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				121D88245F5CF666D6644938 /* Pods_TennisFanTests.framework in Frameworks */,
+				FB310DE08DD431D587D12ADC /* Pods_TennisFanTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -136,7 +140,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A88C4D4A29248007D98A00F6 /* Pods_TennisFan_TennisFanUITests.framework in Frameworks */,
+				3DB9C0C0C570B3ABDE583527 /* Pods_TennisFan_TennisFanUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -146,12 +150,12 @@
 		203DD0C9A0EB146EA6C5F4FD /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				B5C2DE7E16DB7B25D66881D3 /* Pods-TennisFan.debug.xcconfig */,
-				9C8C81B31BEF600C4213DE61 /* Pods-TennisFan.release.xcconfig */,
-				4A3A4CCBE7A88C403C0B5D82 /* Pods-TennisFan-TennisFanUITests.debug.xcconfig */,
-				30344F26F961F03F83AA76A1 /* Pods-TennisFan-TennisFanUITests.release.xcconfig */,
-				F87535E270F07CD5FE13E5A9 /* Pods-TennisFanTests.debug.xcconfig */,
-				BEC93EFCDCCA7D8D1907F57C /* Pods-TennisFanTests.release.xcconfig */,
+				C4337746E7351FC8C6C0F62F /* Pods-TennisFan.debug.xcconfig */,
+				21E8C0AFFBAAE467EF14F6F0 /* Pods-TennisFan.release.xcconfig */,
+				8BA6282CEB47FB9C8BC7D0CF /* Pods-TennisFan-TennisFanUITests.debug.xcconfig */,
+				CE1574F1B5094F09A2E5185F /* Pods-TennisFan-TennisFanUITests.release.xcconfig */,
+				1671BD53736B5CD5D0C9D8AA /* Pods-TennisFanTests.debug.xcconfig */,
+				25E8F5E70BC4BABD1B39117B /* Pods-TennisFanTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -266,12 +270,13 @@
 			isa = PBXGroup;
 			children = (
 				634422D8292283430017A71C /* GoogleService-Info.plist */,
+				63BBD60F29227D8400EFF5CC /* Info.plist */,
 				63BBD60029227D8300EFF5CC /* TennisFan */,
 				63BBD61729227D8400EFF5CC /* TennisFanTests */,
 				63BBD62129227D8400EFF5CC /* TennisFanUITests */,
 				63BBD5FF29227D8300EFF5CC /* Products */,
 				203DD0C9A0EB146EA6C5F4FD /* Pods */,
-				FE06B5F9659761CEC222C534 /* Frameworks */,
+				88180322548BE70E44E778D3 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -296,7 +301,6 @@
 				634422D1292281770017A71C /* NetworkManager */,
 				63BBD60A29227D8400EFF5CC /* Assets.xcassets */,
 				63BBD60C29227D8400EFF5CC /* LaunchScreen.storyboard */,
-				63BBD60F29227D8400EFF5CC /* Info.plist */,
 			);
 			path = TennisFan;
 			sourceTree = "<group>";
@@ -337,12 +341,12 @@
 			path = RankingsModels;
 			sourceTree = "<group>";
 		};
-		FE06B5F9659761CEC222C534 /* Frameworks */ = {
+		88180322548BE70E44E778D3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				64C187A60E7C7B0FAAAA61C3 /* Pods_TennisFan.framework */,
-				FA97597CBD4B08B1881C9DEE /* Pods_TennisFan_TennisFanUITests.framework */,
-				9F5CF30004288BAFDB002179 /* Pods_TennisFanTests.framework */,
+				D5ACF7D13469A1AD5C285036 /* Pods_TennisFan.framework */,
+				E333F84F5660006A29833BDA /* Pods_TennisFan_TennisFanUITests.framework */,
+				CC7E8EDC42E5241CCF6B9668 /* Pods_TennisFanTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -354,11 +358,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 63BBD62829227D8400EFF5CC /* Build configuration list for PBXNativeTarget "TennisFan" */;
 			buildPhases = (
-				D86172F7FC631080D8654119 /* [CP] Check Pods Manifest.lock */,
+				47F3047EFAE566DB90A1A45B /* [CP] Check Pods Manifest.lock */,
 				63BBD5FA29227D8300EFF5CC /* Sources */,
 				63BBD5FB29227D8300EFF5CC /* Frameworks */,
 				63BBD5FC29227D8300EFF5CC /* Resources */,
-				C36277D8501F4B710BA0F0C9 /* [CP] Embed Pods Frameworks */,
+				4FE9AEE5F2D4E5954E0BCA93 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -368,6 +372,8 @@
 			packageProductDependencies = (
 				634422D3292281DF0017A71C /* Alamofire */,
 				634422D6292281F50017A71C /* Kingfisher */,
+				63BAE08329656D5B005202A7 /* FirebaseAuth */,
+				63BAE08529656D5B005202A7 /* FirebaseFirestore */,
 			);
 			productName = TennisFan;
 			productReference = 63BBD5FE29227D8300EFF5CC /* TennisFan.app */;
@@ -377,7 +383,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 63BBD62B29227D8400EFF5CC /* Build configuration list for PBXNativeTarget "TennisFanTests" */;
 			buildPhases = (
-				8FAE5DD271469F457BF43309 /* [CP] Check Pods Manifest.lock */,
+				8A7399F64A94BD7E705664DA /* [CP] Check Pods Manifest.lock */,
 				63BBD61029227D8400EFF5CC /* Sources */,
 				63BBD61129227D8400EFF5CC /* Frameworks */,
 				63BBD61229227D8400EFF5CC /* Resources */,
@@ -396,11 +402,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 63BBD62E29227D8400EFF5CC /* Build configuration list for PBXNativeTarget "TennisFanUITests" */;
 			buildPhases = (
-				39FF2C12226B6A5F56240294 /* [CP] Check Pods Manifest.lock */,
+				15810502A9B768DE3BA789C8 /* [CP] Check Pods Manifest.lock */,
 				63BBD61A29227D8400EFF5CC /* Sources */,
 				63BBD61B29227D8400EFF5CC /* Frameworks */,
 				63BBD61C29227D8400EFF5CC /* Resources */,
-				169D94736FCDBA9C0679E401 /* [CP] Embed Pods Frameworks */,
+				5EB014142AA1159A6A8D9204 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -447,6 +453,7 @@
 			packageReferences = (
 				634422D2292281DF0017A71C /* XCRemoteSwiftPackageReference "Alamofire" */,
 				634422D5292281F50017A71C /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				63BAE08229656D5A005202A7 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = 63BBD5FF29227D8300EFF5CC /* Products */;
 			projectDirPath = "";
@@ -487,24 +494,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		169D94736FCDBA9C0679E401 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-TennisFan-TennisFanUITests/Pods-TennisFan-TennisFanUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-TennisFan-TennisFanUITests/Pods-TennisFan-TennisFanUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TennisFan-TennisFanUITests/Pods-TennisFan-TennisFanUITests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		39FF2C12226B6A5F56240294 /* [CP] Check Pods Manifest.lock */ = {
+		15810502A9B768DE3BA789C8 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -526,7 +516,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		8FAE5DD271469F457BF43309 /* [CP] Check Pods Manifest.lock */ = {
+		47F3047EFAE566DB90A1A45B /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -541,14 +531,14 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-TennisFanTests-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-TennisFan-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		C36277D8501F4B710BA0F0C9 /* [CP] Embed Pods Frameworks */ = {
+		4FE9AEE5F2D4E5954E0BCA93 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -565,7 +555,24 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TennisFan/Pods-TennisFan-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		D86172F7FC631080D8654119 /* [CP] Check Pods Manifest.lock */ = {
+		5EB014142AA1159A6A8D9204 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TennisFan-TennisFanUITests/Pods-TennisFan-TennisFanUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TennisFan-TennisFanUITests/Pods-TennisFan-TennisFanUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TennisFan-TennisFanUITests/Pods-TennisFan-TennisFanUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8A7399F64A94BD7E705664DA /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -580,7 +587,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-TennisFan-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-TennisFanTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -784,7 +791,7 @@
 		};
 		63BBD62929227D8400EFF5CC /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B5C2DE7E16DB7B25D66881D3 /* Pods-TennisFan.debug.xcconfig */;
+			baseConfigurationReference = C4337746E7351FC8C6C0F62F /* Pods-TennisFan.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -812,7 +819,7 @@
 		};
 		63BBD62A29227D8400EFF5CC /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9C8C81B31BEF600C4213DE61 /* Pods-TennisFan.release.xcconfig */;
+			baseConfigurationReference = 21E8C0AFFBAAE467EF14F6F0 /* Pods-TennisFan.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -840,7 +847,7 @@
 		};
 		63BBD62C29227D8400EFF5CC /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F87535E270F07CD5FE13E5A9 /* Pods-TennisFanTests.debug.xcconfig */;
+			baseConfigurationReference = 1671BD53736B5CD5D0C9D8AA /* Pods-TennisFanTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -861,7 +868,7 @@
 		};
 		63BBD62D29227D8400EFF5CC /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BEC93EFCDCCA7D8D1907F57C /* Pods-TennisFanTests.release.xcconfig */;
+			baseConfigurationReference = 25E8F5E70BC4BABD1B39117B /* Pods-TennisFanTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -882,7 +889,7 @@
 		};
 		63BBD62F29227D8400EFF5CC /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4A3A4CCBE7A88C403C0B5D82 /* Pods-TennisFan-TennisFanUITests.debug.xcconfig */;
+			baseConfigurationReference = 8BA6282CEB47FB9C8BC7D0CF /* Pods-TennisFan-TennisFanUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -901,7 +908,7 @@
 		};
 		63BBD63029227D8400EFF5CC /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 30344F26F961F03F83AA76A1 /* Pods-TennisFan-TennisFanUITests.release.xcconfig */;
+			baseConfigurationReference = CE1574F1B5094F09A2E5185F /* Pods-TennisFan-TennisFanUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -976,6 +983,14 @@
 				minimumVersion = 7.0.0;
 			};
 		};
+		63BAE08229656D5A005202A7 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -988,6 +1003,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 634422D5292281F50017A71C /* XCRemoteSwiftPackageReference "Kingfisher" */;
 			productName = Kingfisher;
+		};
+		63BAE08329656D5B005202A7 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 63BAE08229656D5A005202A7 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		63BAE08529656D5B005202A7 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 63BAE08229656D5A005202A7 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

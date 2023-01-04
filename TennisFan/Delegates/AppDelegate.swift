@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import FirebaseFirestore
 import FirebaseCore
 import Firebase
 import FirebaseAuth
@@ -13,10 +14,18 @@ import GoogleSignIn
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
+  static let db = Firestore.firestore()
 
   func application(_ application: UIApplication,
                    didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
     FirebaseApp.configure()
+    GIDSignIn.sharedInstance.restorePreviousSignIn { user, error in
+      if error != nil || user == nil {
+        // Show the app's signed-out state.
+      } else {
+        // Show the app's signed-in state.
+      }
+    }
     return true
   }
 
@@ -51,6 +60,5 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // If not handled by this app, return false.
     return false
   }
-
 }
 

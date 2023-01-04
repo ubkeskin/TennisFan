@@ -9,6 +9,7 @@ import Foundation
 import Firebase
 import FirebaseAuth
 import GoogleSignIn
+import FirebaseCore
 
 class LoginViewModel {
   var eMail: String?
@@ -25,35 +26,15 @@ class LoginViewModel {
     }
   }
   func performGoogleSignInFlow(controller: UIViewController) {
-    guard let clientID = FirebaseApp.app()?.options.clientID else { return }
-    // Create Google Sign In configuration object.
-    let config = GIDConfiguration(clientID: clientID)
     // Start the sign in flow!
-    GIDSignIn.sharedInstance.signIn(with: config, presenting: controller) { [unowned self] user, error in
+    GIDSignIn.sharedInstance.signIn(withPresenting: controller) { [unowned self] user, error in
+      guard error == nil,
+            let idToken = user?.user.idToken?.tokenString,
+            let accessToken = user?.user.accessToken.tokenString
+      else { return controller.displayError(error) }
       
-      guard error == nil else { return controller.displayError(error) }
-      guard
-        let authentication = user?.authentication,
-        let idToken = authentication.idToken
-      else {
-        let error = NSError(
-          domain: "GIDSignInError",
-          code: -1,
-          userInfo: [
-            NSLocalizedDescriptionKey: "Unexpected sign in result: required authentication data is missing.",
-          ]
-        )
-        return controller.displayError(error)
-      }
-      let credential = GoogleAuthProvider.credential(withIDToken: idToken,
-                                                     accessToken: authentication.accessToken)
-      Auth.auth().signIn(with: credential) { result, error in
-        guard error == nil else {
-          print(error.debugDescription)
-          return
-        }
-        // Logic
-      }
+      let credential = GoogleAuthProvider.credential(withIDToken: idToken, accessToken: accessToken)
+      Auth.auth().signIn(with: credential)
     }
   }
 }
