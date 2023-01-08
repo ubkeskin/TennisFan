@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct WTARankingsModel: Codable {
+struct WTARankingsModel: Codable, Hashable {
   let rankings: [Rankings]
 }
 

@@ -8,18 +8,18 @@
 import Foundation
 import UIKit
 
-struct ExpandableContentConfiguration: UIContentConfiguration, Equatable {
+struct ExpandableEventConfiguration: UIContentConfiguration, Equatable {
   
   var eventDate: String?
   var eventHour: String?
   var homeImage: UIImage?
   var awayImage: UIImage?
-  var homeName: String?
-  var awayName: String?
+  var homeCountry: String?
+  var awayCountry: String?
   var homeRanking: String?
   var awayRanking: String?
   func makeContentView() -> UIView & UIContentView {
-    return ExpandableContentView(configuration: self)
+    return ExpandableEventView(configuration: self)
   }
   
   func updated(for state: UIConfigurationState) -> Self {

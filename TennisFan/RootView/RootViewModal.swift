@@ -27,7 +27,6 @@ extension RootViewInterface {
   }
 }
 class RootViewModal: RootViewInterface {
-  var user: User? = Auth.auth().currentUser
   var sceneDelegate = UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate
   lazy var window: UIWindow? = { (sceneDelegate?.window) }()
 }

@@ -7,10 +7,13 @@
 
 import Foundation
 
-struct ATPRankingsModel: Codable {
+struct ATPRankingsModel: Codable, Hashable {
   let rankings: [Rankings]
 }
-struct Rankings: Codable {
+struct Rankings: Codable, Hashable {
+  func hash(into hasher: inout Hasher) {
+    hasher.combine(id)
+  }
   let bestRanking: Int?
   let bestRankingDateTimestamp: Int?
   let country: TeamCountry?
@@ -25,13 +28,16 @@ struct Rankings: Codable {
   let tournamentsPlayed: Int?
   let type: Int?
   
-  enum CodingKeys: String, CodingKey {
+  enum CodingKeys: String, CodingKey, Hashable {
     case bestRanking, bestRankingDateTimestamp, country, id, points, previousPoints,
          previousRanking, ranking, rankingClass, rowName, team, tournamentsPlayed, type
   }
 }
 
-struct ATPTeam: Codable {
+struct ATPTeam: Codable, Hashable {
+  func hash(into hasher: inout Hasher) {
+    hasher.combine(id)
+  }
   let country: TeamCountry?
   let disabled: Bool?
   let gender: String?
@@ -47,7 +53,7 @@ struct ATPTeam: Codable {
   let sport: Sport?
   let teamColors: TeamColors?
   
-  enum CodingKeys: String, CodingKey {
+  enum CodingKeys: String, CodingKey, Hashable {
     case country, disabled, gender, id, name, nameCode, national, ranking, shortName, slug, type,
          userCount, sport, teamColors
   }

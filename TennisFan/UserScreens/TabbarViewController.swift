@@ -35,7 +35,7 @@ class TabbarViewController: UITabBarController {
     viewControllers = [
       createNavController(for:EventsViewController(), title: NSLocalizedString("Events", comment: ""),
                           image: UIImage(systemName: "bolt.shield")!),
-      createNavController(for: ViewController(), title: NSLocalizedString("Rankings", comment: ""),
+      createNavController(for: RankingsViewController(), title: NSLocalizedString("Rankings", comment: ""),
                           image: UIImage(systemName: "crown")!),
       createNavController(for: ViewController(), title: NSLocalizedString("Favorites", comment: ""),
                           image: UIImage(systemName: "star")!),

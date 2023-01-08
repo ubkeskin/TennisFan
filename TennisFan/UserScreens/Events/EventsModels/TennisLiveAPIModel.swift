@@ -221,44 +221,45 @@ struct Tournament: Codable, Hashable {
 
 // MARK: - Category
 struct Category: Codable, Hashable {
-  let flag: Flag?
+  let flag: String?
   let id: Int?
-  let name: CategoryName?
-  let slug: Flag?
+  let name: String?
+  let slug: String?
   let sport: Sport?
 }
 
-enum Flag: String, Codable, Hashable {
-  case atp = "atp"
-  case billieJeanKingCup = "billie-jean-king-cup"
-  case challenger = "challenger"
-  case challengerWomen = "challenger-women"
-  case davisCup = "davis-cup"
-  case itfMen = "itf-men"
-  case itfWomen = "itf-women"
-  case juniors = "juniors"
-  case legends = "legends"
-  case other = "other"
-  case wheelchairs = "wheelchairs"
-  case wta = "wta"
-  case exhibition = "exhibition"
-}
-
-enum CategoryName: String, Codable, Hashable {
-  case atp = "ATP"
-  case billieJeanKingCup = "Billie Jean King Cup"
-  case challenger = "Challenger"
-  case challengerWomen = "Challenger Women"
-  case davisCup = "Davis Cup"
-  case itfMen = "ITF Men"
-  case itfWomen = "ITF Women"
-  case juniors = "Juniors"
-  case legends = "Legends"
-  case other = "Other"
-  case wheelchairs = "Wheelchairs"
-  case wta = "WTA"
-  case exhibition = "Exhibition"
-}
+//enum Flag: String, Codable, Hashable {
+//  case atp = "atp"
+//  case billieJeanKingCup = "billie-jean-king-cup"
+//  case challenger = "challenger"
+//  case challengerWomen = "challenger-women"
+//  case davisCup = "davis-cup"
+//  case itfMen = "itf-men"
+//  case itfWomen = "itf-women"
+//  case juniors = "juniors"
+//  case legends = "legends"
+//  case other = "other"
+//  case wheelchairs = "wheelchairs"
+//  case wta = "wta"
+//  case exhibition = "exhibition"
+//
+//}
+//
+//enum CategoryName: String, Codable, Hashable {
+//  case atp = "ATP"
+//  case billieJeanKingCup = "Billie Jean King Cup"
+//  case challenger = "Challenger"
+//  case challengerWomen = "Challenger Women"
+//  case davisCup = "Davis Cup"
+//  case itfMen = "ITF Men"
+//  case itfWomen = "ITF Women"
+//  case juniors = "Juniors"
+//  case legends = "Legends"
+//  case other = "Other"
+//  case wheelchairs = "Wheelchairs"
+//  case wta = "WTA"
+//  case exhibition = "Exhibition"
+//}
 
 // MARK: - UniqueTournament
 struct UniqueTournament: Codable, Hashable {

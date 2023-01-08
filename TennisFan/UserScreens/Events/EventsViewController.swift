@@ -16,6 +16,7 @@ extension EventsViewController: EventsViewInterface {
     collectionViewSnapshot()
   }
 }
+
 // MARK: -Controller
 class EventsViewController: UIViewController {
   // MARK: -Enums
@@ -26,12 +27,10 @@ class EventsViewController: UIViewController {
     case main
   }
   // MARK: -Properties
+  typealias collectionDataSource = UICollectionViewDiffableDataSource<SectionType, ItemDataType>
+  lazy var viewModel: EventsViewModel? = EventsViewModel(view: self)
   var collectionView: UICollectionView!
   var dataSource: collectionDataSource?
-  lazy var viewModel: EventsViewModel? = EventsViewModel(view: self)
-  
-  typealias collectionDataSource = UICollectionViewDiffableDataSource<SectionType,
-                                                                      ItemDataType>
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -50,7 +49,8 @@ class EventsViewController: UIViewController {
                           collectionViewLayout: collectionViewLayout())
     view.addSubview(collectionView)
   }
-  //MARK: -CollectionVİEW DataSource & Layout
+  
+  // MARK: -CollectionVİEW DataSource & Layout
   private func collectionViewLayout() throws -> UICollectionViewCompositionalLayout {
     var layoutConfig = UICollectionLayoutListConfiguration(appearance: .insetGrouped)
     layoutConfig.headerMode = .none
@@ -71,7 +71,7 @@ class EventsViewController: UIViewController {
       cell.accessories = [.outlineDisclosure(options:headerDisclosureOption)]
     }
     
-    let expandableCellRegistration = UICollectionView.CellRegistration<ExpandableCollactionViewCell, Event>
+    let expandableCellRegistration = UICollectionView.CellRegistration<ExpandableEventViewCell, Event>
     {cell,indexPath,itemIdentifier in
       
       cell.event = itemIdentifier
@@ -79,7 +79,6 @@ class EventsViewController: UIViewController {
     
     dataSource = collectionDataSource(collectionView: collectionView, cellProvider:
                                         { collectionView, indexPath, itemIdentifier in
-      
       switch itemIdentifier {
         case .expandable(let expandable):
             let collectionViewCell = collectionView
@@ -99,6 +98,7 @@ class EventsViewController: UIViewController {
     
     collectionView.dataSource = dataSource
   }
+  
   private func collectionViewSnapshot() {
     var sectionSnapshot = NSDiffableDataSourceSectionSnapshot<ItemDataType>()
     var dataSourceSnapshot = dataSource?.snapshot()
@@ -113,10 +113,11 @@ class EventsViewController: UIViewController {
     dataSource?.apply(sectionSnapshot, to: .main)
   }
 }
+
 extension EventsViewController: UICollectionViewDelegate {
   func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
     
-    guard let selectedCell = collectionView.cellForItem(at: indexPath) as? ExpandableCollactionViewCell,
+    guard let selectedCell = collectionView.cellForItem(at: indexPath) as? ExpandableEventViewCell,
           let selectedEvent = selectedCell.event
     else { return }
 

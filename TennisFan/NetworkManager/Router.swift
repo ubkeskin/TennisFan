@@ -35,7 +35,7 @@ enum Router: URLRequestConvertible {
   var httpHeaders: [String : String] {
     switch self {
       case .search, .events, .playerDetail, .playerRanking, .playerImage, .rankings:
-        return ["X-RapidAPI-Key": "59c909b774msh5cb09e94339cc05p1ef428jsn85ffa3ed06c4",
+        return ["X-RapidAPI-Key": "4e8027dec2msh34dd0d1a79d5e4ap14d17fjsnfacdb846ca3e",
                 "X-RapidAPI-Host": "tennisapi1.p.rapidapi.com"]
     }
   }

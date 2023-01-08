@@ -6,20 +6,21 @@
 //
 
 import UIKit
+import SwiftFlags
 import Kingfisher
 import Alamofire
 
-protocol ExpandableCollectionViewCellInterface {
+protocol ExpandableEventViewCellInterface {
   func setHomeImage(with url: URL, completion: @escaping ()->())
   func setAwayImage(with url: URL, completion: @escaping ()->())
   func setHomeRanking(with id: Int, completion: @escaping ()->())
   func setAwayRanking(with id: Int, completion: @escaping ()->())
-  func setConfiguration(for configuration: inout ExpandableContentConfiguration,
+  func setConfiguration(for configuration: inout ExpandableEventConfiguration,
                         eventDate: String,
                         eventHour: String,
-                        homeName: String,
+                        homeCountry: String,
                         homeRanking: [Ranking],
-                        awayName: String,
+                        awayCountry: String,
                         awayRanking: [Ranking],
                         awayImage: UIImage?,
                         homeImage: UIImage?)
@@ -27,12 +28,12 @@ protocol ExpandableCollectionViewCellInterface {
   func setEventHour() -> String
 }
 
-extension ExpandableCollactionViewCell: ExpandableCollectionViewCellInterface {
+extension ExpandableEventViewCell: ExpandableEventViewCellInterface {
   func setHomeImage(with url: URL,
                             completion: @escaping ()-> ()) {
     let requestModifier0 = AnyModifier { request in
       var r = request
-      r.setValue("59c909b774msh5cb09e94339cc05p1ef428jsn85ffa3ed06c4",
+      r.setValue("4e8027dec2msh34dd0d1a79d5e4ap14d17fjsnfacdb846ca3e",
                  forHTTPHeaderField: "X-RapidAPI-Key")
       return r
     }
@@ -53,7 +54,7 @@ extension ExpandableCollactionViewCell: ExpandableCollectionViewCellInterface {
                             completion: @escaping ()-> ()) {
     let requestModifier0 = AnyModifier { request in
       var r = request
-      r.setValue("59c909b774msh5cb09e94339cc05p1ef428jsn85ffa3ed06c4",
+      r.setValue("4e8027dec2msh34dd0d1a79d5e4ap14d17fjsnfacdb846ca3e",
                  forHTTPHeaderField: "X-RapidAPI-Key")
       return r
     }
@@ -83,23 +84,23 @@ extension ExpandableCollactionViewCell: ExpandableCollectionViewCellInterface {
     }
   }
   
-  func setConfiguration(for configuration: inout ExpandableContentConfiguration,
+  func setConfiguration(for configuration: inout ExpandableEventConfiguration,
                                 eventDate: String,
                                 eventHour: String,
-                                homeName: String,
+                                homeCountry: String,
                                 homeRanking: [Ranking],
-                                awayName: String,
+                                awayCountry: String,
                                 awayRanking: [Ranking],
                                 awayImage: UIImage? = nil,
                                 homeImage: UIImage? = nil) {
     configuration.eventDate = eventDate
     configuration.eventHour = eventHour
     configuration.awayRanking =
-    awayRanking != [] ? String(describing: awayRanking[0].ranking ?? 0) : String(describing: "")
+    awayRanking != [] ? String(describing: awayRanking[0].ranking ?? 0) : String(describing: "⧯")
     configuration.homeRanking =
-    homeRanking != [] ? String(describing: homeRanking[0].ranking ?? 0) : String(describing: "")
-    configuration.awayName = awayName
-    configuration.homeName = homeName
+    homeRanking != [] ? String(describing: homeRanking[0].ranking ?? 0) : String(describing: "⧯")
+    configuration.awayCountry = awayCountry
+    configuration.homeCountry = homeCountry
     configuration.awayImage = awayImage != nil ? awayImage! : UIImage()
     configuration.homeImage = homeImage != nil ? homeImage! : UIImage()
   }
@@ -123,10 +124,10 @@ extension ExpandableCollactionViewCell: ExpandableCollectionViewCellInterface {
   }
 }
 
-class ExpandableCollactionViewCell: UICollectionViewListCell {
+class ExpandableEventViewCell: UICollectionViewListCell {
   
   // MARK: - properties
-  static let reusableID: String = String(describing: ExpandableCollactionViewCell.self)
+  static let reusableID: String = String(describing: ExpandableEventViewCell.self)
   let dateFormatter: DateFormatter = CustomDateFormatter(useCase: .ranking)
   var event: Event? {
     didSet {
@@ -149,7 +150,7 @@ class ExpandableCollactionViewCell: UICollectionViewListCell {
     fatalError("init(coder:) has not been implemented")
   }
   override func updateConfiguration(using state: UICellConfigurationState) {
-    var newConfiguration = ExpandableContentConfiguration().updated(for: state)
+    var newConfiguration = ExpandableEventConfiguration().updated(for: state)
     guard let homeID = event?.homeTeam?.id,
           let awayID = event?.awayTeam?.id,
           let homeUrl = try? Router.playerImage(playerID: homeID).asURLRequest().url,
@@ -185,9 +186,11 @@ class ExpandableCollactionViewCell: UICollectionViewListCell {
     dispatchGroup.notify(queue: .main) { [self] in
       guard let homeRanking = homeRanking else { return }
       guard let awayRanking = awayRanking else { return }
+      let homeCountryCode = homeRanking.first?.team?.country?.name
+      let awayCountryCode = awayRanking.first?.team?.country?.name
       setConfiguration(for: &newConfiguration, eventDate: eventDate ?? "",
-                       eventHour: eventHour ?? "", homeName: event?.homeTeam?.name ?? "",
-                       homeRanking: homeRanking, awayName: event?.awayTeam?.name ?? "",
+                       eventHour: eventHour ?? "", homeCountry: SwiftFlags.flag(for: homeCountryCode ?? "")  ?? "🏴",
+                       homeRanking: homeRanking, awayCountry: SwiftFlags.flag(for: awayCountryCode ?? "") ?? "🏴",
                        awayRanking: awayRanking, awayImage: awayImage?.image,
                        homeImage: homeImage?.image)
       self.contentConfiguration = newConfiguration

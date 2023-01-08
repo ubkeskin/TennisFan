@@ -17,31 +17,24 @@ extension RankingsViewModel: RankingsViewModelInterface {
   func getWTAResults() {
     APIManager.shared.fetchWTARankingData { rankings in
       self.wtaRankings = rankings
+      self.view?.refreshCollectionView()
     }
   }
-  
   func getATPResults() {
     APIManager.shared.fetchATPRankingData{ rankings in
       self.atpRankings = rankings
+      self.view?.refreshCollectionView()
     }
   }
-  
   func viewWillAppear() {
-    // Configure viewWillAppear state.
+    view?.refreshCollectionView()
   }
 }
 
 class RankingsViewModel {
   weak var view: (RankingsViewInterface)?
-  var atpRankings: [Rankings] = [Rankings(bestRanking: nil, bestRankingDateTimestamp: nil,
-                                      country: nil, id: nil, points: nil, previousPoints: nil,
-                                      previousRanking: nil, ranking: nil, rankingClass: nil,
-                                      rowName: nil, team: nil, tournamentsPlayed: nil, type: nil)]
-  var wtaRankings: [Rankings] = [Rankings(bestRanking: nil, bestRankingDateTimestamp: nil,
-                                          country: nil, id: nil, points: nil, previousPoints: nil,
-                                          previousRanking: nil, ranking: nil, rankingClass: nil,
-                                          rowName: nil, team: nil, tournamentsPlayed: nil, type: nil)]
-  
+  var atpRankings: [Rankings]?
+  var wtaRankings: [Rankings]?
   init(view: RankingsViewInterface? = nil) {
     self.view = view
     getATPResults()
