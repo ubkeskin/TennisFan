@@ -16,14 +16,17 @@ extension RankingsViewController: RankingsViewInterface {
     collectionViewSnapshot()
   }
 }
-
-class RankingsViewController: UIViewController {
+extension RankingsViewController {
   enum ItemDataType: Hashable {
     case header(Rankings), expandable(Rankings)
   }
   enum SectionType {
     case main
   }
+}
+
+class RankingsViewController: UIViewController {
+ 
   lazy var viewModel: RankingsViewModel = { RankingsViewModel(view: self) }()
   lazy var segmentController: UISegmentedControl = {
     let segmentController = UISegmentedControl()

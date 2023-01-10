@@ -37,7 +37,7 @@ class TabbarViewController: UITabBarController {
                           image: UIImage(systemName: "bolt.shield")!),
       createNavController(for: RankingsViewController(), title: NSLocalizedString("Rankings", comment: ""),
                           image: UIImage(systemName: "crown")!),
-      createNavController(for: ViewController(), title: NSLocalizedString("Favorites", comment: ""),
+      createNavController(for: FavoritesViewController(), title: NSLocalizedString("Favorites", comment: ""),
                           image: UIImage(systemName: "star")!),
       createNavController(for: ViewController(), title: NSLocalizedString("WatchList", comment: ""),
                           image: UIImage(systemName: "bookmark")!)

@@ -47,6 +47,11 @@
 		63BBD62529227D8400EFF5CC /* TennisFanUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BBD62429227D8400EFF5CC /* TennisFanUITestsLaunchTests.swift */; };
 		63BBD63229227E9800EFF5CC /* TabbarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BBD63129227E9800EFF5CC /* TabbarViewController.swift */; };
 		63BF55E22951AE900030F33E /* SwiftFlags in Frameworks */ = {isa = PBXBuildFile; productRef = 63BF55E12951AE900030F33E /* SwiftFlags */; };
+		63E7AAD4296B30320090E76C /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E7AAD3296B30320090E76C /* FavoritesViewController.swift */; };
+		63E7AAD6296B30650090E76C /* FavoritesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E7AAD5296B30650090E76C /* FavoritesViewModel.swift */; };
+		63E7AAD9296B47DE0090E76C /* FavoriteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E7AAD8296B47DE0090E76C /* FavoriteCell.swift */; };
+		63E7AADB296BF1CC0090E76C /* FavoriteConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E7AADA296BF1CC0090E76C /* FavoriteConfiguration.swift */; };
+		63E7AADD296BF1DA0090E76C /* FavoriteContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E7AADC296BF1DA0090E76C /* FavoriteContentView.swift */; };
 		63F2B79A2951E37A006913F5 /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F2B7992951E37A006913F5 /* Button.swift */; };
 		63F2B79F29520352006913F5 /* FileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F2B79E29520352006913F5 /* FileManager.swift */; };
 		63FB5A172949FBA3000ECED3 /* ATPRankingsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FB5A162949FBA3000ECED3 /* ATPRankingsModel.swift */; };
@@ -116,6 +121,11 @@
 		63BBD62229227D8400EFF5CC /* TennisFanUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TennisFanUITests.swift; sourceTree = "<group>"; };
 		63BBD62429227D8400EFF5CC /* TennisFanUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TennisFanUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		63BBD63129227E9800EFF5CC /* TabbarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarViewController.swift; sourceTree = "<group>"; };
+		63E7AAD3296B30320090E76C /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
+		63E7AAD5296B30650090E76C /* FavoritesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewModel.swift; sourceTree = "<group>"; };
+		63E7AAD8296B47DE0090E76C /* FavoriteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteCell.swift; sourceTree = "<group>"; };
+		63E7AADA296BF1CC0090E76C /* FavoriteConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteConfiguration.swift; sourceTree = "<group>"; };
+		63E7AADC296BF1DA0090E76C /* FavoriteContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteContentView.swift; sourceTree = "<group>"; };
 		63F2B7992951E37A006913F5 /* Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
 		63F2B79E29520352006913F5 /* FileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManager.swift; sourceTree = "<group>"; };
 		63FB5A162949FBA3000ECED3 /* ATPRankingsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ATPRankingsModel.swift; sourceTree = "<group>"; };
@@ -362,8 +372,21 @@
 		63E7AAD2296B2EAC0090E76C /* Favorites */ = {
 			isa = PBXGroup;
 			children = (
+				63E7AAD7296B47BD0090E76C /* CollectionViews */,
+				63E7AAD3296B30320090E76C /* FavoritesViewController.swift */,
+				63E7AAD5296B30650090E76C /* FavoritesViewModel.swift */,
 			);
 			path = Favorites;
+			sourceTree = "<group>";
+		};
+		63E7AAD7296B47BD0090E76C /* CollectionViews */ = {
+			isa = PBXGroup;
+			children = (
+				63E7AAD8296B47DE0090E76C /* FavoriteCell.swift */,
+				63E7AADA296BF1CC0090E76C /* FavoriteConfiguration.swift */,
+				63E7AADC296BF1DA0090E76C /* FavoriteContentView.swift */,
+			);
+			path = CollectionViews;
 			sourceTree = "<group>";
 		};
 		63F2B7982951E362006913F5 /* Buttons */ = {
@@ -674,13 +697,17 @@
 				63B15EE1292582D80046A583 /* TennisLiveAPIModel.swift in Sources */,
 				63F2B79A2951E37A006913F5 /* Button.swift in Sources */,
 				63085130292D014B006042B6 /* ExpandableEventView.swift in Sources */,
+				63E7AADB296BF1CC0090E76C /* FavoriteConfiguration.swift in Sources */,
 				63F2B79F29520352006913F5 /* FileManager.swift in Sources */,
+				63E7AAD4296B30320090E76C /* FavoritesViewController.swift in Sources */,
 				634422EF2922BD3F0017A71C /* LoginViewController.swift in Sources */,
 				63BBD60629227D8300EFF5CC /* ViewController.swift in Sources */,
 				63BBD63229227E9800EFF5CC /* TabbarViewController.swift in Sources */,
 				63FB5A19294A0108000ECED3 /* WTARankingsModel.swift in Sources */,
 				63BBD60229227D8300EFF5CC /* AppDelegate.swift in Sources */,
 				6326A6F3292522E500EAA05F /* EventsViewModel.swift in Sources */,
+				63E7AADD296BF1DA0090E76C /* FavoriteContentView.swift in Sources */,
+				63E7AAD6296B30650090E76C /* FavoritesViewModel.swift in Sources */,
 				6308512E292D013A006042B6 /* ExpandableViewContentConfiguration.swift in Sources */,
 				633F7A25294C941F002A1FF4 /* ExpandableRankingsView.swift in Sources */,
 				63B47C89293A9881002F244F /* EventsDetailViewController.swift in Sources */,
@@ -698,6 +725,7 @@
 				63FB5A172949FBA3000ECED3 /* ATPRankingsModel.swift in Sources */,
 				633F7A21294C93E3002A1FF4 /* ExpandableRankingsViewCell.swift in Sources */,
 				63479242293F45650092AF2C /* TennisAPIPlayerRankingModel.swift in Sources */,
+				63E7AAD9296B47DE0090E76C /* FavoriteCell.swift in Sources */,
 				634422F12922BD4E0017A71C /* LoginViewModel.swift in Sources */,
 				6326A6D72924A74400EAA05F /* RootViewModal.swift in Sources */,
 			);

@@ -167,18 +167,8 @@ enum Point: String, Codable, Hashable {
 // MARK: - RoundInfo
 struct RoundInfo: Codable, Hashable {
   let cupRoundType: Int?
-  let name: RoundInfoName?
+  let name: String?
   let round: Int?
-}
-
-enum RoundInfoName: String, Codable, Hashable {
-  case nameFinal = "Final"
-  case quarterfinal = "Quarterfinal"
-  case roundOf16 = "Round of 16"
-  case roundOf32 = "Round of 32"
-  case semifinal = "Semifinal"
-  case qualificationRound1 = "Qualification round 1"
-  case qualificationRound2 = "Qualification round 2"
 }
 
 // MARK: - Status

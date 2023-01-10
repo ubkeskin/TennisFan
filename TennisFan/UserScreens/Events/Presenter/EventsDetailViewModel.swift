@@ -43,7 +43,7 @@ class EventsDetailViewModel {
     return eventHour.description
   }
   var round: String {
-    event?.roundInfo?.name?.rawValue ?? "Could not fetch round info. API failure."
+    event?.roundInfo?.name ?? "Could not fetch round info. API failure."
   }
   var homeName: String {
     event?.homeTeam?.slug?.replacingOccurrences(of: "-", with: " ") ?? ""
